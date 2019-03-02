@@ -1,0 +1,19 @@
+[
+{
+  "directory": "/home/johannes/dev/BaboCam/build/default",
+  "command": "/usr/bin/c++   -isystem /usr/local/include/opencv4  -O3 -DNDEBUG   -pthread -std=gnu++14 -o CMakeFiles/BaboCam.dir/src/BaboCam.cpp.o -c /home/johannes/dev/BaboCam/src/BaboCam.cpp",
+  "file": "/home/johannes/dev/BaboCam/src/BaboCam.cpp"
+},
+
+{
+  "directory": "/home/johannes/dev/BaboCam/build/default",
+  "command": "/usr/bin/c++   -isystem /usr/local/include/opencv4  -O3 -DNDEBUG   -pthread -std=gnu++14 -o CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.o -c /home/johannes/dev/BaboCam/src/socket/ControlSocket.cpp",
+  "file": "/home/johannes/dev/BaboCam/src/socket/ControlSocket.cpp"
+},
+
+{
+  "directory": "/home/johannes/dev/BaboCam/build/default",
+  "command": "/usr/bin/c++   -isystem /usr/local/include/opencv4  -O3 -DNDEBUG   -pthread -std=gnu++14 -o CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.o -c /home/johannes/dev/BaboCam/src/color/ColorStreamThread.cpp",
+  "file": "/home/johannes/dev/BaboCam/src/color/ColorStreamThread.cpp"
+}
+]
