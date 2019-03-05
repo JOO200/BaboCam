@@ -7,7 +7,7 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 project (BaboCam)
 
 find_package(Threads REQUIRED)
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 4 REQUIRED)
 find_package(realsense2 REQUIRED)
 
 message(STATUS "OpenCV library status:")

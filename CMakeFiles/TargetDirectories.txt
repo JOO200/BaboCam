@@ -1,0 +1,3 @@
+/home/johannes/dev/BaboCam2/CMakeFiles/rebuild_cache.dir
+/home/johannes/dev/BaboCam2/CMakeFiles/BaboCam.dir
+/home/johannes/dev/BaboCam2/CMakeFiles/edit_cache.dir
