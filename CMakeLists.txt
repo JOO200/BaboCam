@@ -17,7 +17,10 @@ file(GLOB babocam_SRC
 		"src/*.hpp"
 		"src/*.cpp"
 		"src/socket/*.cpp"
+		"src/socket/*.hpp"
 		"src/color/*.cpp"
+		"src/color/*.hpp"
+		"src/interfaces/*.hpp"
 )
 
 add_executable(BaboCam ${babocam_SRC})

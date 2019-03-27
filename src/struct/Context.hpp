@@ -14,11 +14,11 @@ struct ball_pos {
 	double x, z;
 	double distance;
 
-} ;
+} ballPos;
 
 struct context {
 	ball_pos curr_ball;
-};
+} aContext;
 
 
 
