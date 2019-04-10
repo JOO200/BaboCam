@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="BaboCam"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\realsense2\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/johannes/dev/BaboCam"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/johannes/dev/BaboCam"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BaboCam">
+				<Option output="/home/johannes/dev/BaboCam/BaboCam" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/johannes/dev/BaboCam"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/opencv4"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 BaboCam"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BaboCam/fast">
+				<Option output="/home/johannes/dev/BaboCam/BaboCam" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/johannes/dev/BaboCam"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/opencv4"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 BaboCam/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/johannes/dev/BaboCam"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/johannes/dev/BaboCam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/johannes/dev/BaboCam/src/BaboCam.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/color/BallFinder.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/color/BallFinder.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/color/CameraProcessing.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/color/CameraProcessing.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/color/ColorStreamThread.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/color/ColorStreamThread.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/Signal.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/Signal.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/command.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/event_manager.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/kobuki.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/macros.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/acceleration_limiter.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/battery.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/digital_output.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/led_array.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/sound.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/packet_finder.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_base.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_headers.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/cliff.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/controller_info.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/core_sensors.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/current.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/dock_ir.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/eeprom.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/firmware.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/gp_input.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/hardware.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/inertia.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/three_axis_gyro.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/unique_device_id.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/parameters.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/version_info.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/battery.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/command.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/core_sensors.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/diff_drive.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/event_manager.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/kobuki.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/packet_finder.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/include/kobuki_ftdi/scanner.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/include/kobuki_ftdi/writer.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/src/find_devices.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/src/flasher.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/src/ftdi_scan.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/src/get_serial_number.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/src/reset_device.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/src/unflasher.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/standard_exception.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/interfaces/IRunnable.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/math/Transformable.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/math/Vector2D.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/math/Vector2D.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/pathfinding/PathFinder.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/pathfinding/PathFinder.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/socket/ControlSocket.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/socket/ControlSocket.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/struct/Context.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/../../../../usr/local/lib/cmake/opencv4/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/../../../../usr/local/lib/cmake/opencv4/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/../../../../usr/local/lib/cmake/opencv4/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/../../../../usr/local/lib/cmake/opencv4/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/../../../../usr/lib/x86_64-linux-gnu/cmake/realsense2/realsense2Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\realsense2\"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/../../../../usr/lib/x86_64-linux-gnu/cmake/realsense2/realsense2ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\realsense2\"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/../../../../usr/lib/x86_64-linux-gnu/cmake/realsense2/realsense2Targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\realsense2\"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/../../../../usr/lib/x86_64-linux-gnu/cmake/realsense2/realsense2Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\realsense2\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

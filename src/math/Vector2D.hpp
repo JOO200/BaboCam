@@ -11,7 +11,7 @@
 #include "Transformable.hpp"
 #include <ctime>
 
-class Vector2D : ITransformable {
+class Vector2D : public ITransformable {
 public:
 	Vector2D(Vector2D & old);
 	Vector2D(double, double);

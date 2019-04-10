@@ -12,7 +12,7 @@
 #include <ctime>
 
 class MotionData {
-	Vector2D diff;
+//	Vector2D diff;
 	time_t start;
 	time_t end;
 };
@@ -20,7 +20,7 @@ class MotionData {
 
 class ITransformable {
 public:
-	virtual ~ITransformable();
+	virtual ~ITransformable() = default;
 	virtual void transform(MotionData & data) = 0;
 };
 

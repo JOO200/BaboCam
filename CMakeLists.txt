@@ -9,18 +9,14 @@ project (BaboCam)
 find_package(Threads REQUIRED)
 find_package(OpenCV 4 REQUIRED)
 find_package(realsense2 REQUIRED)
+#find_package(LibSerial REQUIRED)
 
 message(STATUS "OpenCV library status:")
 message(STATUS "\tversion ${OpenCV_VERSION}")
 
-file(GLOB babocam_SRC
+file(GLOB_RECURSE babocam_SRC
 		"src/*.hpp"
 		"src/*.cpp"
-		"src/socket/*.cpp"
-		"src/socket/*.hpp"
-		"src/color/*.cpp"
-		"src/color/*.hpp"
-		"src/interfaces/*.hpp"
 )
 
 add_executable(BaboCam ${babocam_SRC})

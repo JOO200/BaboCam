@@ -1,3 +1,5 @@
 build/default/CMakeFiles/*
 build/default/BaboCam
 build/default/Makefile
+cmake_build_debug/CMakeFiles/*
+CMakeFiles/*
