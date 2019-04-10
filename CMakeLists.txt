@@ -9,7 +9,7 @@ project (BaboCam)
 find_package(Threads REQUIRED)
 find_package(OpenCV 4 REQUIRED)
 find_package(realsense2 REQUIRED)
-#find_package(LibSerial REQUIRED)
+#find_package(serial REQUIRED)
 
 message(STATUS "OpenCV library status:")
 message(STATUS "\tversion ${OpenCV_VERSION}")
@@ -21,4 +21,4 @@ file(GLOB_RECURSE babocam_SRC
 
 add_executable(BaboCam ${babocam_SRC})
 
-target_link_libraries(BaboCam ${OpenCV_LIBS} Threads::Threads realsense2)
+target_link_libraries(BaboCam ${OpenCV_LIBS} Threads::Threads realsense2 serial)

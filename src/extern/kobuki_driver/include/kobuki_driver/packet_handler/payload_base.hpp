@@ -19,7 +19,6 @@
 
 #include <stdint.h>
 #include <queue>
-#include <SerialStreamBuf.h>
 #include "../../../../SerialDataBuffer.hpp"
 
 /*****************************************************************************

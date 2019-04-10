@@ -17,7 +17,7 @@
 ** Include
 *****************************************************************************/
 
-#include <SerialStreamBuf.h>
+#include <libserial/SerialStream.h>
 #include "../packet_handler/payload_base.hpp"
 #include "../packet_handler/payload_headers.hpp"
 

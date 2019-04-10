@@ -18,6 +18,7 @@
 #include "../../include/kobuki_driver/kobuki.hpp"
 #include "../../include/kobuki_driver/packet_handler/payload_headers.hpp"
 #include <libserial/SerialPortConstants.h>
+#include <libserial/SerialPort.h>
 #include <syslog.h>
 
 /*****************************************************************************
@@ -152,7 +153,7 @@ namespace kobuki {
         sendCommand(Command::GetControllerGain());
         //sig_controller_info.emit(); //emit default gain
 
-        thread = std::thread(&Kobuki::spin, *this);
+        thread = std::thread(&Kobuki::spin, this);
     }
 
 /*****************************************************************************

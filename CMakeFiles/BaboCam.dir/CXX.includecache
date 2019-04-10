@@ -139,8 +139,6 @@ iomanip
 -
 deque
 -
-libserial/SerialStream.h
--
 ../macros.hpp
 /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/macros.hpp
 ../../../../SerialDataBuffer.hpp
@@ -150,8 +148,6 @@ libserial/SerialStream.h
 stdint.h
 -
 queue
--
-SerialStreamBuf.h
 -
 ../../../../SerialDataBuffer.hpp
 /home/johannes/dev/BaboCam/src/extern/SerialDataBuffer.hpp
@@ -251,7 +247,7 @@ vector
 /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_headers.hpp
 
 /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/unique_device_id.hpp
-SerialStreamBuf.h
+libserial/SerialStream.h
 -
 ../packet_handler/payload_base.hpp
 /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_base.hpp
@@ -290,6 +286,8 @@ math.h
 ../../include/kobuki_driver/packet_handler/payload_headers.hpp
 /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_headers.hpp
 libserial/SerialPortConstants.h
+-
+libserial/SerialPort.h
 -
 syslog.h
 -

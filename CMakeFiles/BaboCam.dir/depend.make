@@ -385,25 +385,6 @@ CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o: 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o: src/extern/kobuki_driver/include/kobuki_driver/packet_handler/packet_finder.hpp
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o: src/extern/kobuki_driver/src/driver/packet_finder.cpp
 
-CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/find_devices.cpp.o: src/extern/kobuki_ftdi/include/kobuki_ftdi/scanner.hpp
-CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/find_devices.cpp.o: src/extern/kobuki_ftdi/src/find_devices.cpp
-
-CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/flasher.cpp.o: src/extern/kobuki_ftdi/include/kobuki_ftdi/scanner.hpp
-CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/flasher.cpp.o: src/extern/kobuki_ftdi/include/kobuki_ftdi/writer.hpp
-CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/flasher.cpp.o: src/extern/kobuki_ftdi/src/flasher.cpp
-
-CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/ftdi_scan.cpp.o: src/extern/kobuki_ftdi/src/ftdi_scan.cpp
-
-CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/get_serial_number.cpp.o: src/extern/kobuki_ftdi/include/kobuki_ftdi/scanner.hpp
-CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/get_serial_number.cpp.o: src/extern/kobuki_ftdi/src/get_serial_number.cpp
-
-CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/reset_device.cpp.o: src/extern/kobuki_ftdi/include/kobuki_ftdi/scanner.hpp
-CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/reset_device.cpp.o: src/extern/kobuki_ftdi/src/reset_device.cpp
-
-CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/unflasher.cpp.o: src/extern/kobuki_ftdi/include/kobuki_ftdi/scanner.hpp
-CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/unflasher.cpp.o: src/extern/kobuki_ftdi/include/kobuki_ftdi/writer.hpp
-CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/unflasher.cpp.o: src/extern/kobuki_ftdi/src/unflasher.cpp
-
 CMakeFiles/BaboCam.dir/src/math/Vector2D.cpp.o: src/math/Transformable.hpp
 CMakeFiles/BaboCam.dir/src/math/Vector2D.cpp.o: src/math/Vector2D.cpp
 CMakeFiles/BaboCam.dir/src/math/Vector2D.cpp.o: src/math/Vector2D.hpp

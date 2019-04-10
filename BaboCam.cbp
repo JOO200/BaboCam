@@ -91,6 +91,9 @@
 		<Unit filename="/home/johannes/dev/BaboCam/src/color/ColorStreamThread.hpp">
 			<Option target="BaboCam"/>
 		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/extern/SerialDataBuffer.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
 		<Unit filename="/home/johannes/dev/BaboCam/src/extern/Signal.cpp">
 			<Option target="BaboCam"/>
 		</Unit>
@@ -209,24 +212,6 @@
 			<Option target="BaboCam"/>
 		</Unit>
 		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/include/kobuki_ftdi/writer.hpp">
-			<Option target="BaboCam"/>
-		</Unit>
-		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/src/find_devices.cpp">
-			<Option target="BaboCam"/>
-		</Unit>
-		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/src/flasher.cpp">
-			<Option target="BaboCam"/>
-		</Unit>
-		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/src/ftdi_scan.cpp">
-			<Option target="BaboCam"/>
-		</Unit>
-		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/src/get_serial_number.cpp">
-			<Option target="BaboCam"/>
-		</Unit>
-		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/src/reset_device.cpp">
-			<Option target="BaboCam"/>
-		</Unit>
-		<Unit filename="/home/johannes/dev/BaboCam/src/extern/kobuki_ftdi/src/unflasher.cpp">
 			<Option target="BaboCam"/>
 		</Unit>
 		<Unit filename="/home/johannes/dev/BaboCam/src/extern/standard_exception.hpp">

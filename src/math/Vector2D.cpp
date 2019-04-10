@@ -18,25 +18,25 @@ Vector2D::Vector2D(double oldX, double oldY) {
 	timestamp = time(NULL);
 }
 
-Vector2D Vector2D::add(Vector2D& v) {
+Vector2D* Vector2D::add(Vector2D& v) {
 	x += v.getX();
 	y += v.getY();
 	return this;
 }
 
-Vector2D Vector2D::add(double px, double py) {
+Vector2D* Vector2D::add(double px, double py) {
 	x += px;
 	y += py;
 	return this;
 }
 
-Vector2D Vector2D::divide(Vector2D& v) {
+Vector2D* Vector2D::divide(Vector2D& v) {
 	x /= v.getX();
 	y /= v.getY();
 	return this;
 }
 
-Vector2D Vector2D::divide(double px, double py) {
+Vector2D* Vector2D::divide(double px, double py) {
 	x /= px;
 	y /= py;
 	return this;

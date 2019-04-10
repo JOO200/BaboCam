@@ -24,7 +24,6 @@
 
 #include <iomanip>
 #include <deque>
-#include <libserial/SerialStream.h>
 #include "../macros.hpp"
 #include "../../../../SerialDataBuffer.hpp"
 
