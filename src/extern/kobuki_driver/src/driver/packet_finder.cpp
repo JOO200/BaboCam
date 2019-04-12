@@ -14,6 +14,7 @@
 #include <sstream>
 #include <iostream>
 #include <syslog.h>
+#include <libserial/SerialPort.h>
 #include "../../include/kobuki_driver/packet_handler/packet_finder.hpp"
 
 /*****************************************************************************
@@ -27,7 +28,7 @@ namespace kobuki {
 *****************************************************************************/
 
     PacketFinderBase::PacketFinderBase() :
-            state(waitingForStx), verbose(false) {
+            verbose(false) {
     }
 
 
@@ -39,17 +40,12 @@ namespace kobuki {
                                      const BufferType &putStx, const BufferType &putEtx, unsigned int sizeLengthField,
                                      unsigned int sizeMaxPayload, unsigned int sizeChecksumField,
                                      bool variableSizePayload) {
-        size_stx = putStx.size();
-        size_etx = putEtx.size();
         size_length_field = sizeLengthField;
         variable_size_payload = variableSizePayload;
         size_max_payload = sizeMaxPayload;
         size_payload = variable_size_payload ? 0 : sizeMaxPayload;
         size_checksum_field = sizeChecksumField;
-        STX = putStx;
-        ETX = putEtx;
         buffer = BufferType(size_stx + size_length_field + size_max_payload + size_checksum_field + size_etx);
-        state = waitingForStx;
 
 //  sig_warn.connect(sigslots_namespace + std::string("/ros_warn"));
 //  sig_error.connect(sigslots_namespace + std::string("/ros_error"));
@@ -57,49 +53,11 @@ namespace kobuki {
         //todo; exception
         // Problem1: size_length_field = 1, vairable_size_payload = false
 
-        clear();
-    }
-
-    void PacketFinderBase::clear() {
-        state = waitingForStx;
         buffer.clear();
     }
 
     void PacketFinderBase::enableVerbose() {
         verbose = true;
-    }
-
-    bool PacketFinderBase::checkSum() {
-        return true;
-    }
-
-    unsigned int PacketFinderBase::numberOfDataToRead() {
-        unsigned int num(0);
-
-        switch (state) {
-            case waitingForEtx:
-                num = 1;
-                break;
-
-            case waitingForPayloadToEtx:
-                num = size_payload + size_etx + size_checksum_field;
-                break;
-
-            case waitingForPayloadSize:
-                num = size_checksum_field;
-                break;
-
-            case waitingForStx:
-            case clearBuffer:
-            default:
-                num = 1;
-                break;
-        }
-
-        if (verbose) {
-            printf("[state(%d):%02d]", state, num);
-        }
-        return num;
     }
 
     void PacketFinderBase::getBuffer(BufferType &bufferRef) {
@@ -121,220 +79,68 @@ namespace kobuki {
  * @param numberOfIncoming
  * @return bool : true if a valid incoming packet has been found.
  */
-    bool PacketFinderBase::update(SerialDataBuffer &dataStream) {
+    SerialDataBuffer & PacketFinderBase::update(LibSerial::SerialPort &dataStream) {
         // clearBuffer = 0, waitingForStx, waitingForPayloadSize, waitingForPayloadToEtx, waitingForEtx,
         // std::cout << "update [" << numberOfIncoming << "][" << state << "]" << std::endl;
-        bool found_packet(false);
 
-        if (state == clearBuffer) {
-            buffer.clear();
-            state = waitingForStx;
+
+        WaitForStx(dataStream);
+        waitForPayloadSize(dataStream);
+        buffer.clear();
+        dataStream.Read(buffer, size_payload, 0);
+        unsigned char check_sum;
+        dataStream.ReadByte(check_sum, 0);
+
+        //syslog(LOG_INFO, "Buffer 0: 0x%02x", buffer[0]);
+        std::string concat;
+        std::stringstream ss;
+        for(auto & num : buffer) {
+            ss << std::hex << (int)num << " ";
         }
-        char next;
-        switch (state) {
-            case waitingForStx:
-                next = (char)dataStream.snextc();
-                if (next) {
-                    if (size_length_field) {
-                        state = waitingForPayloadSize; // kobukibot
-                    } else {
-                        if (variable_size_payload) {
-                            // e.g. stargazer
-                            state = waitingForEtx;
-                        } else {
-                            // e.g. iroboQ
-                            //Todo; should put correct state
-                            state = waitingForPayloadToEtx;
-                        }
-                    }
-                }
-                break;
-            case waitingForEtx:
-                if (waitForEtx(dataStream, found_packet)) {
-                    state = clearBuffer;
-                }
-                break;
+        concat = ss.str();
+        //syslog(LOG_INFO, "Read: %s", concat.c_str());
 
-            case waitingForPayloadSize:
-                if (waitForPayloadSize(dataStream)) {
-                    state = waitingForPayloadToEtx;
-                }
-                break;
-
-            case waitingForPayloadToEtx:
-                if (waitForPayloadAndEtx(dataStream, found_packet)) {
-                    state = clearBuffer;
-                }
-                break;
-
-            default:
-                state = waitingForStx;
-                break;
-        }
-        if (found_packet) {
-            return checkSum();    //what happen if checksum is equal to false(== -1)?
-        } else {
-            return false;
-        }
+        return buffer;
     }
 
 /*****************************************************************************
 ** Protected
 *****************************************************************************/
 
-    bool PacketFinderBase::WaitForStx(const unsigned char datum) {
+    bool PacketFinderBase::WaitForStx(LibSerial::SerialPort & incoming) {
         bool found_stx(true);
 
         // add incoming datum
-        buffer.push_back(datum);
-
-        // check whether we have STX
-        /* TODO: Stuff
-        for (unsigned int i = 0; i < buffer.size() && i < STX.size(); i++) {
-            if (buffer[i] != STX[i]) {
-                found_stx = false;
-                buffer.pop_front();
+        //buffer.push_back(datum);
+        while(true) {
+            unsigned char read;
+            incoming.ReadByte(read, 0);
+            if(read == 0xAA) {
+                incoming.ReadByte(read, 0);
+                if(read == 0xAA) {
+                    incoming.ReadByte(read, 0);
+                }
+                if(read == 0x55) {
+                    break;
+                }
+            } else if(read == 0x55) {
                 break;
             }
-        }*/
-
-        return (found_stx && buffer.size() == STX.size());
+        }
+        return true;
     }
 
-    bool PacketFinderBase::waitForPayloadSize(SerialDataBuffer & incoming) {
+    bool PacketFinderBase::waitForPayloadSize(LibSerial::SerialPort & incoming) {
         // push data
 
         unsigned char first_byte;
-        while(!incoming.empty()) {
-            auto incomingChar = (unsigned char)incoming.snextc();
-            first_byte = incomingChar;
-            buffer.push_back(incomingChar);
-        }
+        incoming.ReadByte(first_byte, 0);
 
+        size_payload = static_cast<unsigned int>(first_byte);
         if (verbose) {
-            for (unsigned int i = 0; i < buffer.size(); i++)
-                printf("%02x ", buffer[i]);
-            printf("\n");
+            syslog(LOG_DEBUG, "[payloadSize: %d]", size_payload);
         }
 
-        // check when we need to wait for etx
-        if (buffer.size() < size_stx + size_length_field) {
-            return false;
-        } else {
-            switch (size_length_field) {
-                case 1: // kobuki
-                    size_payload = buffer[size_stx];
-                    break;
-                case 2:
-                    size_payload = buffer[size_stx];
-                    size_payload |= buffer[size_stx + 1] << 8;
-                    break;
-                case 4:
-                    size_payload = buffer[size_stx];
-                    size_payload |= buffer[size_stx + 1] << 8;
-                    size_payload |= buffer[size_stx + 2] << 16;
-                    size_payload |= buffer[size_stx + 3] << 24;
-                    break;
-                default:
-                    // put assertion failure
-                    size_payload = 1;
-                    break;
-            }
-
-            if (verbose) {
-                printf("[payloadSize: %d]\n", size_payload);
-            }
-
-            return true;
-        }
+        return true;
     }
-
-    bool PacketFinderBase::waitForEtx(SerialDataBuffer & incoming, bool &foundPacket) {
-        // push data
-        buffer.push_back((unsigned char)incoming.snextc());
-
-        // check when we need to wait for etx
-        // if minimum payload size is 1
-        if (buffer.size() < size_stx + size_etx + 1) {
-            return false;
-        } else {
-            unsigned int number_of_match(0);
-            for (unsigned int i = 0; i < ETX.size(); i++) {
-                if (buffer[buffer.size() - ETX.size() + i] == ETX[i]) {
-                    number_of_match++;
-                }
-            }
-
-            if (number_of_match == ETX.size()) {
-                foundPacket = true;
-                return true;
-            }
-
-            return buffer.size() >= size_stx + size_max_payload + size_etx;
-        }
-    }
-
-    bool PacketFinderBase::waitForPayloadAndEtx(SerialDataBuffer &incoming,
-                                                bool &foundPacket) {
-        // push data
-        while(!incoming.empty()) {
-            buffer.push_back((unsigned char)incoming.snextc());
-        }
-        /*********************
-        ** Error Handling
-        **********************/
-        if (size_payload > size_max_payload) {
-            state = clearBuffer;
-            std::ostringstream ostream;
-            ostream << "abnormally sized payload retrieved, clearing [" << size_max_payload << "][" << size_payload
-                    << "]";
-
-            ostream << std::setfill('0') << std::uppercase; //declare once, use everytime
-//	ostream.fill('0') //call once, affects everytime
-//      ostream.width(2); //need to call everytime
-
-/*
-    ostream << "[";
-    for (unsigned int i = 0; i < numberOfIncoming; ++i ) {
-      ostream.width(2); // need to declare evertime
-      ostream << std::hex << static_cast<int>(*(incoming+i)) << " " << std::dec;
-    }
-    ostream << "\b]";
-*/
-            ostream << ", buffer: [" << std::setw(2) << buffer.size() << "][";
-            for (unsigned int i = 0; i < buffer.size(); ++i) {
-                ostream << std::setw(2) << std::hex << static_cast<int>(buffer[i]) << " " << std::dec;
-            }
-            ostream << "\b]";
-
-            syslog(LOG_ERR, ostream.str().c_str());
-            return false;
-        }
-        // check when we need to wait for etx
-        if (buffer.size() < size_stx + size_length_field + size_payload + size_checksum_field + size_etx) {
-            return false;
-        } else {
-            if (verbose) {
-                std::cout << "Start check etx " << std::endl;
-                for (unsigned int i = 0; i < buffer.size(); ++i) {
-                // for (unsigned int i = 0; i < numberOfIncoming; ++i) {
-                    std::cout << std::hex << static_cast<int>(buffer[i]) << " ";
-                }
-                std::cout << std::dec << std::endl;
-            }
-            foundPacket = true;
-
-            for (unsigned int i = (size_stx + size_length_field + size_payload + size_checksum_field);
-                 i < (size_stx + size_length_field + size_payload + size_checksum_field + size_etx); i++) {
-                if (buffer[i] != ETX[i]) {
-                    foundPacket = false;
-                }
-            }
-            if (verbose)
-                std::cout << "End of checking etx " << std::endl;
-            return true;
-        }
-    }
-
-
 } // namespace kobuki

@@ -13,50 +13,21 @@
   <component name="ChangeListManager">
     <list default="true" id="7df572b4-941b-42a2-924b-9d79d684bbbe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaboCam.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/BaboCam.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/battery.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/battery.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/BaboCam.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/command.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/command.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/core_sensors.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/core_sensors.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/event_manager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/event_manager.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/find_devices.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/flasher.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/ftdi_scan.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/get_serial_number.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/reset_device.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_ftdi/src/unflasher.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Progress/11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Progress/19" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Progress/count.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BaboCam.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaboCam.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/command.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/command.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/kobuki.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/kobuki.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/packet_finder.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/packet_finder.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_base.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_base.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/unique_device_id.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/unique_device_id.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/parameters.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/parameters.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/command.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/command.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/kobuki.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/kobuki.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extern/kobuki_ftdi/src/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extern/kobuki_ftdi/src/find_devices.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extern/kobuki_ftdi/src/flasher.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extern/kobuki_ftdi/src/ftdi_scan.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extern/kobuki_ftdi/src/get_serial_number.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extern/kobuki_ftdi/src/reset_device.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extern/kobuki_ftdi/src/unflasher.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extern/standard_exception.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/extern/standard_exception.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/math/Vector2D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/math/Vector2D.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/math/Vector2D.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/math/Vector2D.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/packet_finder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/packet_finder.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -73,31 +44,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/unique_device_id.hpp">
+        <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/kobuki.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="194">
+              <caret line="121" column="9" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
               <folding>
-                <element signature="e#720#755#0" expanded="true" />
+                <element signature="e#583#600#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/include/libserial/SerialStream.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/packet_finder.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-220">
-              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -105,43 +58,95 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/kobuki.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
+            <state relative-caret-position="200">
+              <caret line="575" column="10" selection-start-line="575" selection-start-column="10" selection-end-line="575" selection-end-column="10" />
               <folding>
                 <element signature="e#375#395#0" expanded="true" />
-                <element signature="e#26250#27212#0" expanded="true" />
+                <element signature="e#18162#19612#0" expanded="true" />
+                <element signature="e#25612#26574#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/extern/standard_exception.hpp">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/packet_finder.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="65" column="56" lean-forward="true" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
+            <state relative-caret-position="194">
+              <caret line="58" column="33" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="40" />
+              <folding>
+                <element signature="e#383#401#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeCache.txt">
+        <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/packet_finder.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="101" column="19" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
+              <folding>
+                <element signature="e#764#782#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/command.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="159" column="5" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+              <folding>
+                <element signature="e#368#387#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/command.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="127" column="12" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="15" />
+              <folding>
+                <element signature="e#635#677#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.cproject">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+        <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/modules/led_array.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="-211" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/BaboCam.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/extern/kobuki_ftdi/include/kobuki_ftdi/scanner.hpp">
+        <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/modules/sound.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-945" />
+            <state relative-caret-position="389">
+              <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -159,6 +164,15 @@
       <find>wr</find>
       <find>remove</find>
       <find>LibSerial::SerialStreamBuf</find>
+      <find>Driver Wor</find>
+      <find>Device state</find>
+      <find>serial_read</find>
+      <find>cout</find>
+      <find>First Data</find>
+      <find>version_info</find>
+      <find>LED</find>
+      <find>SET_C</find>
+      <find>raw</find>
     </findStrings>
     <replaceStrings>
       <replace>std::queue</replace>
@@ -168,6 +182,7 @@
     <dirStrings>
       <dir>$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver</dir>
       <dir>$PROJECT_DIR$/src/extern/kobuki_driver</dir>
+      <dir>$PROJECT_DIR$/src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -176,8 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/extern/ecl_type_traits/include/ecl/type_traits/macros.hpp" />
-        <option value="$PROJECT_DIR$/src/extern/ecl_converters/include/ecl/converters/from_byte_array.hpp" />
         <option value="$PROJECT_DIR$/src/extern/ecl_containers/include/ecl/containers/array/formatters.hpp" />
         <option value="$PROJECT_DIR$/src/extern/ecl_containers/include/ecl/containers/fifo.hpp" />
         <option value="$PROJECT_DIR$/src/extern/ecl_containers/include/ecl/containers/push_and_pop/push_and_pop_dynamic.hpp" />
@@ -202,8 +215,6 @@
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/core_sensors.hpp" />
         <option value="$PROJECT_DIR$/src/extern/Signal.hpp" />
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/version_info.hpp" />
-        <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/kobuki.hpp" />
-        <option value="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/command.cpp" />
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/core_sensors.cpp" />
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/cliff.hpp" />
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/current.hpp" />
@@ -215,26 +226,31 @@
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/three_axis_gyro.hpp" />
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/controller_info.hpp" />
         <option value="$PROJECT_DIR$/src/extern/SerialDataBuffer.hpp" />
-        <option value="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/packet_finder.cpp" />
-        <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/command.hpp" />
         <option value="$PROJECT_DIR$/src/math/Transformable.hpp" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/math/Vector2D.hpp" />
         <option value="$PROJECT_DIR$/src/math/Vector2D.cpp" />
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_base.hpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/extern/standard_exception.hpp" />
+        <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/parameters.hpp" />
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/packet_finder.hpp" />
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/unique_device_id.hpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/packet_finder.cpp" />
+        <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/command.hpp" />
+        <option value="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/command.cpp" />
+        <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/kobuki.hpp" />
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/kobuki.cpp" />
-        <option value="$PROJECT_DIR$/src/extern/standard_exception.hpp" />
+        <option value="$PROJECT_DIR$/src/BaboCam.cpp" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1854" />
-    <option name="width" value="1843" />
-    <option name="height" value="789" />
+    <option name="x" value="1920" />
+    <option name="y" value="-2" />
+    <option name="width" value="1920" />
+    <option name="height" value="1082" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -242,6 +258,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -265,11 +282,67 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="extern" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="BaboCam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BaboCam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="extern" type="462c0819:PsiDirectoryNode" />
+              <item name="kobuki_driver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BaboCam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BaboCam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="extern" type="462c0819:PsiDirectoryNode" />
+              <item name="kobuki_driver" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BaboCam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BaboCam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="extern" type="462c0819:PsiDirectoryNode" />
+              <item name="kobuki_driver" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+              <item name="kobuki_driver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BaboCam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BaboCam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="extern" type="462c0819:PsiDirectoryNode" />
+              <item name="kobuki_driver" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+              <item name="kobuki_driver" type="462c0819:PsiDirectoryNode" />
+              <item name="packets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BaboCam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BaboCam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="extern" type="462c0819:PsiDirectoryNode" />
+              <item name="kobuki_driver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BaboCam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BaboCam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="extern" type="462c0819:PsiDirectoryNode" />
+              <item name="kobuki_driver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="driver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BaboCam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BaboCam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,6 +352,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -331,7 +405,9 @@
       <workItem from="1554374516417" duration="771000" />
       <workItem from="1554378173425" duration="17722000" />
       <workItem from="1554894137596" duration="5843000" />
-      <workItem from="1554900026586" duration="8027000" />
+      <workItem from="1554900026586" duration="15342000" />
+      <workItem from="1555072114412" duration="3271000" />
+      <workItem from="1555075601773" duration="7632000" />
     </task>
     <task id="LOCAL-00001" summary="Save commit">
       <created>1553708483112</created>
@@ -347,11 +423,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554903992822</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Sucessfully linked project.">
+      <created>1554908373470</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1554908373470</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43214000" />
+    <option name="totallyTimeSpent" value="61432000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -364,14 +447,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-2" width="1920" height="1082" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984127" visible="true" weight="0.2801494" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984127" visible="true" weight="0.28655282" />
       <window_info id="Structure" order="1" sideWeight="0.50158733" side_tool="true" weight="0.2801494" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32948583" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32948583" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3693599" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32948583" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39979014" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32948583" />
@@ -380,7 +464,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32948583" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010672" side_tool="true" weight="0.33892968" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.33788037" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" sideWeight="0.4994664" visible="true" weight="0.33892968" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4994664" weight="0.33892968" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.2497332" />
@@ -395,63 +479,10 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Save commit" />
     <MESSAGE value="Zwischensicherung 2019-04-10" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zwischensicherung 2019-04-10" />
+    <MESSAGE value="Sucessfully linked project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Sucessfully linked project." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/parameters.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/tools/simple_keyop.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/tools/version_info.cpp" />
-    <entry file="file:///usr/local/include/libserial/SerialStreamBuf.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/version_info.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="65" column="48" lean-forward="true" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/version_info.cpp.in">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/Signal.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/7/iosfwd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="134" column="36" selection-start-line="134" selection-start-column="36" selection-end-line="134" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/SerialStreamBuf.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="37" column="49" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/libserial/SerialPortConstants.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="92" column="24" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/cliff.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-40">
@@ -480,89 +511,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/dock_ir.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/firmware.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/hardware.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/three_axis_gyro.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/controller_info.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/core_sensors.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
-          <folding>
-            <element signature="e#397#413#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/7/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="282" column="6" selection-start-line="282" selection-start-column="6" selection-end-line="282" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/packet_finder.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1750">
-          <caret line="191" column="22" selection-start-line="191" selection-start-column="22" selection-end-line="191" selection-end-column="22" />
-          <folding>
-            <element signature="e#383#401#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/command.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="40" column="57" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/command.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1354">
-          <caret line="80" column="64" selection-start-line="80" selection-start-column="64" selection-end-line="80" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/SerialDataBuffer.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding>
-            <element signature="e#117#134#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -572,16 +524,6 @@
           <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#158#181#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/Signal.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding>
-            <element signature="e#130#142#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -624,34 +566,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/kobuki.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/modules/battery.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/core_sensors.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#624#669#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_base.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2035">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -662,50 +580,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/packet_finder.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-220">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/unique_device_id.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#720#755#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_ftdi/src/find_devices.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#351#370#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_ftdi/src/unflasher.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_ftdi/src/reset_device.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_ftdi/src/get_serial_number.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_ftdi/src/ftdi_scan.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-585" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_ftdi/src/flasher.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_ftdi/src/find_devices.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_ftdi/src/unflasher.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_ftdi/src/reset_device.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_ftdi/src/get_serial_number.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_ftdi/src/ftdi_scan.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_ftdi/src/flasher.cpp" />
     <entry file="file://$PROJECT_DIR$/src/extern/kobuki_ftdi/include/kobuki_ftdi/scanner.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-945" />
@@ -721,17 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/kobuki.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
-          <folding>
-            <element signature="e#375#395#0" expanded="true" />
-            <element signature="e#26250#27212#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/7/bits/exception.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -741,8 +610,224 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/extern/standard_exception.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="65" column="56" lean-forward="true" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
+        <state relative-caret-position="185">
+          <caret line="65" column="56" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/libserial/SerialPort.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/core_sensors.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-295">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding>
+            <element signature="e#397#413#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/modules.hpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/parameters.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-205">
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/event_manager.hpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/controller_info.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/core_sensors.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1335">
+          <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
+          <folding>
+            <element signature="e#624#669#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/Signal.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding>
+            <element signature="e#130#142#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/version_info.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/hardware.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_headers.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/three_axis_gyro.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="74" column="29" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_base.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
+          <folding>
+            <element signature="e#607#626#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/dock_ir.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packets/unique_device_id.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="68" column="84" selection-start-line="68" selection-start-column="84" selection-end-line="68" selection-end-column="84" />
+          <folding>
+            <element signature="e#720#755#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/7/bits/stl_vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="938" column="6" selection-start-line="938" selection-start-column="6" selection-end-line="938" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/SerialDataBuffer.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding>
+            <element signature="e#117#134#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/modules/sound.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/packet_finder.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="101" column="19" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
+          <folding>
+            <element signature="e#764#782#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/packet_finder.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="58" column="33" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="40" />
+          <folding>
+            <element signature="e#383#401#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/modules/led_array.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-211" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.cproject">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/command.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="127" column="12" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="15" />
+          <folding>
+            <element signature="e#635#677#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/command.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="159" column="5" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+          <folding>
+            <element signature="e#368#387#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/kobuki.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="121" column="9" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+          <folding>
+            <element signature="e#583#600#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/kobuki.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="575" column="10" selection-start-line="575" selection-start-column="10" selection-end-line="575" selection-end-column="10" />
+          <folding>
+            <element signature="e#375#395#0" expanded="true" />
+            <element signature="e#18162#19612#0" expanded="true" />
+            <element signature="e#25612#26574#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BaboCam.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

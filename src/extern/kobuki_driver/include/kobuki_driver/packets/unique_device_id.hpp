@@ -20,6 +20,7 @@
 #include <libserial/SerialStream.h>
 #include "../packet_handler/payload_base.hpp"
 #include "../packet_handler/payload_headers.hpp"
+#include "syslog.h"
 
 /*****************************************************************************
 ** Namespace
@@ -64,8 +65,14 @@ public:
     unsigned char header_id, length_packed;
     buildVariable(header_id, byteStream);
     buildVariable(length_packed, byteStream);
-    if( header_id != Header::UniqueDeviceID ) return false;
-    if( length_packed != length ) return false;
+    if( header_id != Header::UniqueDeviceID ) {
+        syslog(LOG_ERR, "Wrong header found: needed[%d], foud[%d] ", Header::UniqueDeviceID, header_id);
+        return false;
+    }
+    if( length_packed != length ) {
+        syslog(LOG_ERR, "Wrong length found: needed[%d], foud[%d] ", length, length_packed);
+        return false;
+    }
 
     buildVariable(data.udid0, byteStream);
     buildVariable(data.udid1, byteStream);

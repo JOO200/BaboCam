@@ -26,6 +26,7 @@
 #include <deque>
 #include "../macros.hpp"
 #include "../../../../SerialDataBuffer.hpp"
+#include "libserial/SerialPort.h"
 
 /*****************************************************************************
  ** Namespaces
@@ -73,16 +74,6 @@ class kobuki_PUBLIC PacketFinderBase
 {
 public:
   typedef SerialDataBuffer BufferType;
-
-  enum packetFinderState
-  {
-    clearBuffer = 0,
-    waitingForStx,
-    waitingForPayloadSize,
-    waitingForPayloadToEtx,
-    waitingForEtx,
-  };
-  enum packetFinderState state;
 protected:
 
   unsigned int size_stx;
@@ -93,8 +84,6 @@ protected:
   unsigned int size_payload;
   unsigned int size_checksum_field;
 
-  BufferType STX;
-  BufferType ETX;
   BufferType buffer;
 
   bool verbose;
@@ -104,24 +93,20 @@ protected:
 public:
   PacketFinderBase(); /**< Default constructor. Use with configure(). **/
 
-  virtual ~PacketFinderBase() {};
+  virtual ~PacketFinderBase() = default;;
 
   void configure(const std::string &sigslots_namespace,
                  const BufferType & putStx, const BufferType & putEtx, unsigned int sizeLengthField,
                  unsigned int sizeMaxPayload, unsigned int sizeChecksumField, bool variableSizePayload);
   void clear();
   void enableVerbose();
-  virtual bool update(SerialDataBuffer & dataBuffer);
-  virtual bool checkSum();
-  unsigned int numberOfDataToRead();
+  virtual SerialDataBuffer & update(LibSerial::SerialPort & dataBuffer);
   void getBuffer(BufferType & bufferRef);
   void getPayload(BufferType & bufferRef);
 
 protected:
-  bool WaitForStx(const unsigned char datum);
-  bool waitForPayloadSize(SerialDataBuffer & incoming);
-  bool waitForEtx(SerialDataBuffer & incoming, bool & foundPacket);
-  bool waitForPayloadAndEtx(SerialDataBuffer & incoming, bool & foundPacket);
+  bool WaitForStx(LibSerial::SerialPort & incoming);
+  bool waitForPayloadSize(LibSerial::SerialPort & incoming);
 };
 
 }

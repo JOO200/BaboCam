@@ -72,13 +72,13 @@ namespace kobuki {
         // connect signals
         sig_version_info.setFunction([](const kobuki::VersionInfo *info) {
             syslog(LOG_INFO, "VersionInfo received:");
-            syslog(LOG_INFO, "\tFirmware Version %d", info->firmware);
-            syslog(LOG_INFO, "\tSoftware Version %d", info->software);
-            syslog(LOG_INFO, "\tHardware Version %d", info->hardware);
+            syslog(LOG_INFO, "    Firmware Version %d", info->firmware);
+            syslog(LOG_INFO, "    Software Version %d", info->software);
+            syslog(LOG_INFO, "    Hardware Version %d", info->hardware);
         });
         sig_controller_info.setFunction([]() {
             syslog(LOG_INFO, "ControllerInfo received.");
-        });
+        });/*
         sig_stream_data.setFunction([]() {
             syslog(LOG_INFO, "StreamData received.");
         });
@@ -91,9 +91,9 @@ namespace kobuki {
         sig_raw_control_command.setFunction([](const std::vector<short> * command) {
             syslog(LOG_INFO, "CommandControl received:");
             for(const short& val : *command) {
-                syslog(LOG_INFO, "\tExisting Command: %d", val);
+                syslog(LOG_INFO, "    Existing Command: %d", val);
             }
-        });
+        });*/
         //sig_serial_timeout.connect(sigslots_namespace+std::string("/serial_timeout"));
 
         sig_debug.setFunction([](const std::string * message) {
@@ -107,13 +107,13 @@ namespace kobuki {
         });
         sig_error.setFunction([](const std::string * message) {
             syslog(LOG_ERR, "%s", message->c_str());
-        });
+        });/*
         sig_named.setFunction([](const std::vector<std::string> * message) {
             syslog(LOG_INFO, "Named Message received: ");
             for(const std::string & val : *message) {
-                syslog(LOG_INFO, "\t%s", val.c_str());
+                syslog(LOG_INFO, "    %s", val.c_str());
             }
-        });
+        });*/
 
         // TODO: Catch Block fehlt.
         serial.Open(parameters.device_port);
@@ -124,6 +124,7 @@ namespace kobuki {
         serial.SetCharacterSize(LibSerial::CharacterSize::CHAR_SIZE_8);
         serial.SetSerialPortBlockingStatus(true);
         is_connected = serial.IsOpen();
+        is_alive = true;
         //serial.Open(parameters.device_port, 115200);
         // serial.open(parameters.device_port, ecl::BaudRate_115200, ecl::DataBits_8, ecl::StopBits_1, ecl::NoParity);  // this will throw exceptions - NotFoundError, OpenError
         // serial.block(4000); // blocks by default, but just to be clear!
@@ -144,13 +145,13 @@ namespace kobuki {
          ** Get Version Info Commands
          *******************************************/
         version_info_reminder = 10;
-        sendCommand(Command::GetVersionInfo());
+        sendCommand(Command(kobuki::Command::CommandTypes::GET_VERSION));
 
         /******************************************
          ** Get Controller Info Commands
          *******************************************/
         controller_info_reminder = 10;
-        sendCommand(Command::GetControllerGain());
+        sendCommand(Command(kobuki::Command::CommandTypes::GET_CONTROLLER_GAIN));
         //sig_controller_info.emit(); //emit default gain
 
         thread = std::thread(&Kobuki::spin, this);
@@ -194,7 +195,8 @@ namespace kobuki {
     void Kobuki::spin() {
         std::chrono::system_clock::time_point last_signal_time;
         std::chrono::system_clock::duration timeout = std::chrono::milliseconds(100);
-        SerialDataBuffer buffer;
+
+        bool start(true);
 
         /*********************
          ** Simulation Params
@@ -232,177 +234,160 @@ namespace kobuki {
             /*********************
              ** Read Incoming
              **********************/
-            serial.Read(buffer, packet_finder.numberOfDataToRead(), 0);
-            std::ostringstream ostream;
-            ostream << "kobuki_node : serial_read(" << buffer.size() << ")"
-                    << ", packet_finder.numberOfDataToRead(" << packet_finder.numberOfDataToRead() << ")";
             //sig_debug.emit(ostream.str());
-            sig_named.process(log("debug", "serial", ostream.str()));
             // might be useful to send this to a topic if there is subscribers
 
 
-            if (packet_finder.update(buffer)) // this clears packet finder's buffer and transfers important bytes into it
-            {
-                PacketFinder::BufferType local_buffer;
-                packet_finder.getBuffer(local_buffer); // get a reference to packet finder's buffer.
-                sig_raw_data_stream.process(local_buffer);
+            PacketFinder::BufferType & local_buffer = packet_finder.update(serial);
+            sig_raw_data_stream.process(local_buffer);
 
-                packet_finder.getPayload(data_buffer);// get a reference to packet finder's buffer.
+            lockDataAccess();
+            while (!local_buffer.empty()) {
+                //syslog(LOG_DEBUG, "header_id[%d], length[%d], remains[%zu]", (unsigned int)local_buffer[0], (unsigned int)local_buffer[1], local_buffer.size());
+                switch (local_buffer[0]) {
+                    // these come with the streamed feedback
+                    case Header::CoreSensors:
+                        if (!core_sensors.deserialise(local_buffer)) {
+                            fixPayload(local_buffer);
+                            break;
+                        }
+                        event_manager.update(core_sensors.data, cliff.data.bottom);
+                        break;
+                    case Header::DockInfraRed:
+                        if (!dock_ir.deserialise(local_buffer)) {
+                            fixPayload(local_buffer);
+                            break;
+                        }
+                        break;
+                    case Header::Inertia:
+                        if (!inertia.deserialise(local_buffer)) {
+                            fixPayload(local_buffer);
+                            break;
+                        }
 
-                lockDataAccess();
-                while (data_buffer.size() > 0) {
-                    //std::cout << "header_id: " << (unsigned int)data_buffer[0] << " | ";
-                    //std::cout << "length: " << (unsigned int)data_buffer[1] << " | ";
-                    //std::cout << "remains: " << data_buffer.size() << " | ";
-                    //std::cout << "local_buffer: " << local_buffer.size() << " | ";
-                    //std::cout << std::endl;
-                    switch (data_buffer[0]) {
-                        // these come with the streamed feedback
-                        case Header::CoreSensors:
-                            if (!core_sensors.deserialise(data_buffer)) {
-                                fixPayload(data_buffer);
-                                break;
-                            }
-                            event_manager.update(core_sensors.data, cliff.data.bottom);
+                        // Issue #274: use first imu reading as zero heading; update when reseting odometry
+                        if (isnan(heading_offset) == true)
+                            heading_offset = (static_cast<double>(inertia.data.angle) / 100.0) * M_PI / 180.0;
+                        break;
+                    case Header::Cliff:
+                        if (!cliff.deserialise(local_buffer)) {
+                            fixPayload(local_buffer);
                             break;
-                        case Header::DockInfraRed:
-                            if (!dock_ir.deserialise(data_buffer)) {
-                                fixPayload(data_buffer);
-                                break;
-                            }
+                        }
+                        break;
+                    case Header::Current:
+                        if (!current.deserialise(local_buffer)) {
+                            fixPayload(local_buffer);
                             break;
-                        case Header::Inertia:
-                            if (!inertia.deserialise(data_buffer)) {
-                                fixPayload(data_buffer);
-                                break;
-                            }
-
-                            // Issue #274: use first imu reading as zero heading; update when reseting odometry
-                            if (isnan(heading_offset) == true)
-                                heading_offset = (static_cast<double>(inertia.data.angle) / 100.0) * M_PI / 180.0;
+                        }
+                        break;
+                    case Header::GpInput:
+                        if (!gp_input.deserialise(local_buffer)) {
+                            fixPayload(local_buffer);
                             break;
-                        case Header::Cliff:
-                            if (!cliff.deserialise(data_buffer)) {
-                                fixPayload(data_buffer);
-                                break;
-                            }
+                        }
+                        event_manager.update(gp_input.data.digital_input);
+                        break;
+                    case Header::ThreeAxisGyro:
+                        if (!three_axis_gyro.deserialise(local_buffer)) {
+                            fixPayload(local_buffer);
                             break;
-                        case Header::Current:
-                            if (!current.deserialise(data_buffer)) {
-                                fixPayload(data_buffer);
-                                break;
-                            }
+                        }
+                        break;
+                        // the rest are only included on request
+                    case Header::Hardware:
+                        if (!hardware.deserialise(local_buffer)) {
+                            fixPayload(local_buffer);
                             break;
-                        case Header::GpInput:
-                            if (!gp_input.deserialise(data_buffer)) {
-                                fixPayload(data_buffer);
-                                break;
-                            }
-                            event_manager.update(gp_input.data.digital_input);
+                        }
+                        //sig_version_info.emit(VersionInfo(firmware.data.version, hardware.data.version));
+                        break;
+                    case Header::Firmware:
+                        if (!firmware.deserialise(local_buffer)) {
+                            fixPayload(local_buffer);
                             break;
-                        case Header::ThreeAxisGyro:
-                            if (!three_axis_gyro.deserialise(data_buffer)) {
-                                fixPayload(data_buffer);
-                                break;
-                            }
-                            break;
-                            // the rest are only included on request
-                        case Header::Hardware:
-                            if (!hardware.deserialise(data_buffer)) {
-                                fixPayload(data_buffer);
-                                break;
-                            }
-                            //sig_version_info.emit(VersionInfo(firmware.data.version, hardware.data.version));
-                            break;
-                        case Header::Firmware:
-                            if (!firmware.deserialise(data_buffer)) {
-                                fixPayload(data_buffer);
-                                break;
-                            }
-                            try {
-                                // Check firmware/driver compatibility; major version must be the same
-                                int version_match = firmware.check_major_version();
+                        }
+                        try {
+                            // Check firmware/driver compatibility; major version must be the same
+                            int version_match = firmware.check_major_version();
+                            if (version_match < 0) {
+                                sig_error.process(
+                                        "Robot firmware is outdated and needs to be upgraded. Consult how-to on: " \
+                           "http://kobuki.yujinrobot.com/home-en/documentation/howtos/upgrading-firmware");
+                                sig_error.process(
+                                        "Robot firmware version is " + VersionInfo::toString(firmware.data.version)
+                                        + "; latest version is " + firmware.current_version());
+                                shutdown_requested = true;
+                            } else if (version_match > 0) {
+                                sig_error.process(
+                                        "Driver version isn't not compatible with robot firmware. Please upgrade driver");
+                                shutdown_requested = true;
+                            } else {
+                                sig_info.process("Version matched. Thanks god.");
+                                // And minor version don't need to, but just make a suggestion
+                                version_match = firmware.check_minor_version();
                                 if (version_match < 0) {
-                                    sig_error.process(
-                                            "Robot firmware is outdated and needs to be upgraded. Consult how-to on: " \
-                               "http://kobuki.yujinrobot.com/home-en/documentation/howtos/upgrading-firmware");
-                                    sig_error.process(
-                                            "Robot firmware version is " + VersionInfo::toString(firmware.data.version)
-                                            + "; latest version is " + firmware.current_version());
-                                    shutdown_requested = true;
+                                    sig_warn.process("Robot firmware is outdated; we suggest you to upgrade it " \
+                            "to benefit from the latest features. Consult how-to on: "  \
+                            "http://kobuki.yujinrobot.com/home-en/documentation/howtos/upgrading-firmware");
+                                    sig_warn.process("Robot firmware version is " +
+                                                  VersionInfo::toString(firmware.data.version)
+                                                  + "; latest version is " + firmware.current_version());
                                 } else if (version_match > 0) {
-                                    sig_error.process(
-                                            "Driver version isn't not compatible with robot firmware. Please upgrade driver");
-                                    shutdown_requested = true;
-                                } else {
-                                    // And minor version don't need to, but just make a suggestion
-                                    version_match = firmware.check_minor_version();
-                                    if (version_match < 0) {
-                                        sig_warn.process("Robot firmware is outdated; we suggest you to upgrade it " \
-                                "to benefit from the latest features. Consult how-to on: "  \
-                                "http://kobuki.yujinrobot.com/home-en/documentation/howtos/upgrading-firmware");
-                                        sig_warn.process("Robot firmware version is " +
-                                                      VersionInfo::toString(firmware.data.version)
-                                                      + "; latest version is " + firmware.current_version());
-                                    } else if (version_match > 0) {
-                                        // Driver version is outdated; maybe we should also suggest to upgrade it, but this is not a typical case
-                                    }
+                                    // Driver version is outdated; maybe we should also suggest to upgrade it, but this is not a typical case
                                 }
                             }
-                            catch (std::out_of_range &e) {
-                                // Wrong version hardcoded on firmware; lowest value is 10000
-                                sig_error.process(std::string("Invalid firmware version number: ").append(e.what()));
-                                shutdown_requested = true;
-                            }
+                        }
+                        catch (std::out_of_range &e) {
+                            // Wrong version hardcoded on firmware; lowest value is 10000
+                            sig_error.process(std::string("Invalid firmware version number: ").append(e.what()));
+                            shutdown_requested = true;
+                        }
+                        break;
+                    case Header::UniqueDeviceID:
+                        if (!unique_device_id.deserialise(local_buffer)) {
+                            fixPayload(local_buffer);
                             break;
-                        case Header::UniqueDeviceID:
-                            if (!unique_device_id.deserialise(data_buffer)) {
-                                fixPayload(data_buffer);
-                                break;
-                            }
-                            sig_version_info.process(VersionInfo(firmware.data.version, hardware.data.version,
-                                                              unique_device_id.data.udid0, unique_device_id.data.udid1,
-                                                              unique_device_id.data.udid2));
-                            sig_info.process("Version info - Hardware: " + VersionInfo::toString(hardware.data.version)
-                                          + ". Firmware: " + VersionInfo::toString(firmware.data.version));
-                            version_info_reminder = 0;
+                        }
+                        sig_version_info.process(VersionInfo(firmware.data.version, hardware.data.version,
+                                                          unique_device_id.data.udid0, unique_device_id.data.udid1,
+                                                          unique_device_id.data.udid2));
+                        sig_info.process("Version info - Hardware: " + VersionInfo::toString(hardware.data.version)
+                                      + ". Firmware: " + VersionInfo::toString(firmware.data.version));
+                        version_info_reminder = 0;
+                        break;
+                    case Header::ControllerInfo:
+                        syslog(LOG_INFO, "Controller Info arrived.");
+                        if (!controller_info.deserialise(local_buffer)) {
+                            fixPayload(local_buffer);
                             break;
-                        case Header::ControllerInfo:
-                            if (!controller_info.deserialise(data_buffer)) {
-                                fixPayload(data_buffer);
-                                break;
-                            }
-                            sig_controller_info.process();
-                            controller_info_reminder = 0;
-                            break;
-                        default: // in the case of unknown or mal-formed sub-payload
-                            fixPayload(data_buffer);
-                            break;
-                    }
+                        }
+                        sig_controller_info.process();
+                        controller_info_reminder = 0;
+                        break;
+                    default: // in the case of unknown or mal-formed sub-payload
+                        fixPayload(local_buffer);
+                        break;
                 }
-                //std::cout << "---" << std::endl;
-                unlockDataAccess();
-
-                is_alive = true;
-                event_manager.update(is_connected, is_alive);
-                // last_signal_time.stamp();
-                sig_stream_data.process();
-                sendBaseControlCommand(); // send the command packet to mainboard;
-                if (version_info_reminder/*--*/ > 0) sendCommand(Command::GetVersionInfo());
-                if (controller_info_reminder/*--*/ > 0) sendCommand(Command::GetControllerGain());
-            } else {
-                // watchdog
-                /* TODO: Watchdog;
-                if (is_alive && ((ecl::TimeStamp() - last_signal_time) > timeout)) {
-                    is_alive = false;
-                    // do not call here the event manager update, as it generates a spurious offline state
-                }*/
             }
+            //std::cout << "---" << std::endl;
+            unlockDataAccess();
+
+            is_alive = true;
+            event_manager.update(is_connected, is_alive);
+            // last_signal_time.stamp();
+            sig_stream_data.process();
+            sendBaseControlCommand(); // send the command packet to mainboard;
+            if (version_info_reminder/*--*/ > 0) sendCommand(Command(kobuki::Command::CommandTypes::GET_VERSION));
+            // if (controller_info_reminder/*--*/ > 0) sendCommand(Command(kobuki::Command::CommandTypes::GET_CONTROLLER_GAIN));
+
         }
         sig_error.process("Driver worker thread shutdown!");
     }
 
     void Kobuki::fixPayload(SerialDataBuffer &byteStream) {
+        byteStream.clear();
+#if 0
         if (byteStream.size() < 3) { /* minimum size of sub-payload is 3; header_id, length, data */
             sig_named.process(log("error", "packet", "too small sub-payload detected."));
         } else {
@@ -433,19 +418,19 @@ namespace kobuki {
                 sig_named.process(log("error", "packet", "malformed sub-payload detected. " + ostream.str()));
             else sig_named.process(log("debug", "packet", "unknown sub-payload detected. " + ostream.str()));
         }
+#endif
     }
 
 
 /*****************************************************************************
  ** Implementation [Human Friendly Accessors]
  *****************************************************************************/
-/*
-    ecl::Angle<double> Kobuki::getHeading() const {
-        ecl::Angle<double> heading;
+
+    double Kobuki::getHeading() const {
+        double heading = (static_cast<double>(inertia.data.angle) / 100.0) * M_PI / 180;
         // raw data angles are in hundredths of a degree, convert to radians.
-        heading = (static_cast<double>(inertia.data.angle) / 100.0) * ecl::pi / 180.0;
-        return ecl::wrap_angle(heading - heading_offset);
-    }*/
+        return (heading - heading_offset);
+    }
 
     double Kobuki::getAngularVelocity() const {
         // raw data angles are in hundredths of a degree, convert to radians.
@@ -491,15 +476,15 @@ namespace kobuki {
  *****************************************************************************/
 
     void Kobuki::setLed(const enum LedNumber &number, const enum LedColour &colour) {
-        sendCommand(Command::SetLedArray(number, colour, kobuki_command.data));
+        sendCommand(Command(kobuki::Command::CommandTypes::LED_ARRAY, number, colour, kobuki_command.data));
     }
 
     void Kobuki::setDigitalOutput(const DigitalOutput &digital_output) {
-        sendCommand(Command::SetDigitalOutput(digital_output, kobuki_command.data));
+        sendCommand(Command(kobuki::Command::CommandTypes::DIGITAL_OUTPUT, digital_output, kobuki_command.data));
     }
 
     void Kobuki::setExternalPower(const DigitalOutput &digital_output) {
-        sendCommand(Command::SetExternalPower(digital_output, kobuki_command.data));
+        sendCommand(Command(kobuki::Command::CommandTypes::EXTERNAL_POWER, digital_output, kobuki_command.data));
     }
 
 //void Kobuki::playSound(const enum Sounds &number)
@@ -508,7 +493,7 @@ namespace kobuki {
 //}
 
     void Kobuki::playSoundSequence(const enum SoundSequences &number) {
-        sendCommand(Command::PlaySoundSequence(number, kobuki_command.data));
+        sendCommand(Command(kobuki::Command::CommandTypes::PLAY_SOUND, number, kobuki_command.data));
     }
 
     bool Kobuki::setControllerGain(const unsigned char &type, const unsigned int &p_gain,
@@ -521,7 +506,7 @@ namespace kobuki {
             return false;
         }
 
-        sendCommand(Command::SetControllerGain(type, p_gain, i_gain, d_gain));
+        sendCommand(Command(kobuki::Command::CommandTypes::SET_CONTROLLER_GAIN, type, p_gain, i_gain, d_gain));
         return true;
     }
 
@@ -534,16 +519,30 @@ namespace kobuki {
             return false;
         }
 
-        sendCommand(Command::GetControllerGain());
+        sendCommand(Command(kobuki::Command::CommandTypes::GET_CONTROLLER_GAIN));
         return true;
     }
 
-    void Kobuki::setBaseControl(const double &linear_velocity, const double &angular_velocity) {
+
+    void Kobuki::setBaseControl(const int16_t &lin, const int16_t &ang) {
+        linear_velocity = lin; angular_velocity = ang;
         //diff_drive.setVelocityCommands(linear_velocity, angular_velocity);
     }
 
     void Kobuki::sendBaseControlCommand() {
         std::vector<double> velocity_commands_received;
+        /* TODO: Anfahrtsrampen hinzufügen.
+        if(linear_velocity != curr_linear_velocity) {
+            auto diff_velocity = linear_velocity - curr_linear_velocity;
+            if(diff_velocity > 5) {
+                curr_linear_velocity += 5;
+            } else if(diff_velocity < 10) {
+                curr_linear_velocity -= 10;
+            } else curr_linear_velocity = linear_velocity;
+        }*/
+        curr_linear_velocity = linear_velocity;
+        curr_angular_velocity = angular_velocity;
+        sendCommand(Command(kobuki::Command::CommandTypes::VELOCITY_CONTROL, curr_linear_velocity, curr_angular_velocity));
 #if 0
         if (acceleration_limiter.isEnabled()) {
             velocity_commands_received = acceleration_limiter.limit(diff_drive.pointVelocity());
@@ -574,6 +573,7 @@ namespace kobuki {
  * @param command : prepared command template (see Command's static member functions).
  */
     void Kobuki::sendCommand(Command command) {
+        //sig_info.process("Sending Command.");
         if (!is_alive || !is_connected) {
             //need to do something
             sig_debug.process("Device state is not ready yet.");
@@ -594,10 +594,18 @@ namespace kobuki {
             checksum ^= (command_buffer[i]);
 
         command_buffer.push_back(checksum);
+        std::string concat;
+        std::stringstream ss;
+        for(auto & num : command_buffer) {
+            ss << std::hex << (int)num << " ";
+        }
+        concat = ss.str();
+        //syslog(LOG_INFO, "Write: %s", concat.c_str());
         //check_device();
         serial.Write(command_buffer);
 
         sig_raw_data_command.process(command_buffer);
+
         command_mutex.unlock();
     }
 

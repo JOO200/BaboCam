@@ -37,7 +37,7 @@ class Parameters
 {
 public:
   Parameters() :
-    device_port("/dev/kobuki"),
+    device_port("/dev/ttyUSB0"),
     sigslots_namespace("/kobuki"),
     simulation(false),
     enable_acceleration_limiter(true),

@@ -155,7 +155,7 @@ public:
   /*********************
   ** Hard Commands
   **********************/
-  void setBaseControl(const double &linear_velocity, const double &angular_velocity);
+  void setBaseControl(const int16_t &linear_velocity, const int16_t &angular_velocity);
   void setLed(const enum LedNumber &number, const enum LedColour &colour);
   void setDigitalOutput(const DigitalOutput &digital_output);
   void setExternalPower(const DigitalOutput &digital_output);
@@ -215,11 +215,16 @@ private:
 
   LibSerial::SerialPort serial;
   PacketFinder packet_finder;
-  PacketFinder::BufferType data_buffer;
   bool is_alive; // used as a flag set by the data stream watchdog
 
   int version_info_reminder;
   int controller_info_reminder;
+
+  /*
+   * Velocity
+   */
+  int16_t linear_velocity, angular_velocity;
+  int16_t curr_linear_velocity, curr_angular_velocity;
 
   /*********************
   ** Commands

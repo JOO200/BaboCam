@@ -11,6 +11,7 @@
 ** Includes
 *****************************************************************************/
 
+#include <syslog.h>
 #include "../../include/kobuki_driver/command.hpp"
 
 /*****************************************************************************
@@ -50,8 +51,10 @@ const unsigned char Command::header1 = 0x55;
  * @param current_data : need to store settings as the gp_output command is a combo command
  * @return Command : the command to send down the wire.
  */
-Command & Command::SetLedArray(const enum LedNumber &number, const enum LedColour &colour, Command::Data &current_data)
+Command::Command(const enum CommandTypes &type, const enum LedNumber &number, const enum LedColour &colour, Command::Data &current_data)
 {
+    if(type != CommandTypes::LED_ARRAY)
+        throw std::exception();
   // gp_out is 16 bits
   uint16_t value;
   if (number == Led1)
@@ -64,10 +67,8 @@ Command & Command::SetLedArray(const enum LedNumber &number, const enum LedColou
     value = colour << 2;
     current_data.gp_out = (current_data.gp_out & 0xf3ff) | value; // update first
   }
-  Command outgoing = Command();
-  outgoing.data = current_data;
-  outgoing.data.command = Command::SetDigitalOut;
-  return outgoing;
+  data = current_data;
+  data.command = Command::SetDigitalOut;
 }
 
 /**
@@ -81,8 +82,10 @@ Command & Command::SetLedArray(const enum LedNumber &number, const enum LedColou
  * @param current_data : need to store settings as the gp_output command is a combo command
  * @return Command : the command to send down the wire.
  */
-Command & Command::SetDigitalOutput(const DigitalOutput &digital_output, Command::Data &current_data)
+Command::Command(const enum CommandTypes &type, const DigitalOutput &digital_output, Command::Data &current_data)
 {
+    if(type != CommandTypes::DIGITAL_OUTPUT && type != CommandTypes::EXTERNAL_POWER)
+        throw std::exception();
   uint16_t values = 0x0000;
   uint16_t clear_mask = 0xfff0;
   for ( unsigned int i = 0; i < 4; ++i ) {
@@ -95,63 +98,36 @@ Command & Command::SetDigitalOutput(const DigitalOutput &digital_output, Command
     }
   }
   current_data.gp_out = (current_data.gp_out & clear_mask) | values;
-  Command outgoing;
-  outgoing.data = current_data;
-  outgoing.data.command = Command::SetDigitalOut;
-  return outgoing;
+  data = current_data;
+  data.command = Command::SetDigitalOut;
 }
 
-/**
- * Set one of the external power sources available to the user.
- *
- * They set the second 4 bits(0x00f0) on the data.gp_out variable.
- *
- * @todo could use far better documentation here/example here.
- *
- * @param digital_output : mask and value to send
- * @param current_data : need to store settings as the gp_output command is a combo command
- * @return Command : the command to send down the wire.
- */
-Command & Command::SetExternalPower(const DigitalOutput &digital_output, Command::Data &current_data)
+Command::Command(const enum CommandTypes & type, const enum SoundSequences &number, Command::Data &current_data)
 {
-  uint16_t values = 0x0000;
-  uint16_t clear_mask = 0xff0f;
-  for ( unsigned int i = 0; i < 4; ++i ) {
-    if ( digital_output.mask[i] ) {
-      if ( digital_output.values[i] ) {
-        values |= ( 1 << (i+4) );
-      }
-    } else {
-      clear_mask |= ( 1 << (i+4) ); // don't clear this bit, so set a 1 here
-    }
-  }
-  current_data.gp_out = (current_data.gp_out & clear_mask) | values;
-  Command outgoing;
-  outgoing.data = current_data;
-  outgoing.data.command = Command::SetDigitalOut;
-  return outgoing;
-}
-
-Command & Command::PlaySoundSequence(const enum SoundSequences &number, Command::Data &current_data)
-{
+    if(type != CommandTypes::PLAY_SOUND)
+        throw std::exception();
   uint16_t value; // gp_out is 16 bits
   value = number; // defined with the correct bit specification.
 
-  Command outgoing;
-  outgoing.data.segment_name = value;
-  outgoing.data.command = Command::SoundSequence;
-  return outgoing;
+  data.segment_name = value;
+  data.command = Command::SoundSequence;
 }
 
-Command & Command::GetVersionInfo()
+Command::Command(const enum CommandTypes &type)
 {
-  Command outgoing;
-  outgoing.data.request_flags = 0;
-  outgoing.data.request_flags |= static_cast<uint16_t>(HardwareVersion);
-  outgoing.data.request_flags |= static_cast<uint16_t>(FirmwareVersion);
-  outgoing.data.request_flags |= static_cast<uint16_t>(UniqueDeviceID);
-  outgoing.data.command = Command::RequestExtra;
-  return outgoing;
+    if(type == CommandTypes::GET_VERSION) {
+        data.request_flags = 0;
+        data.request_flags |= static_cast<uint16_t>(HardwareVersion);
+        data.request_flags |= static_cast<uint16_t>(FirmwareVersion);
+        data.request_flags |= static_cast<uint16_t>(UniqueDeviceID);
+        data.command = Command::RequestExtra;
+    }
+
+    if(type == CommandTypes::GET_CONTROLLER_GAIN) {
+        data.command = Command::GetController;
+        data.reserved = 0;
+    }
+
 }
 #if 0
 Command & Command::SetVelocityControl(DiffDrive& diff_drive)
@@ -165,33 +141,28 @@ Command & Command::SetVelocityControl(DiffDrive& diff_drive)
 }
 #endif
 
-Command & Command::SetVelocityControl(const int16_t &speed, const int16_t &radius)
+Command::Command(const enum CommandTypes & type, const int16_t &speed, const int16_t &radius)
 {
-  Command outgoing;
-  outgoing.data.speed = speed;
-  outgoing.data.radius = radius;
-  outgoing.data.command = Command::BaseControl;
-  return outgoing;
+  if(type != CommandTypes::VELOCITY_CONTROL)
+      throw std::exception();
+  data.speed = speed;
+  data.radius = radius;
+  data.command = Command::BaseControl;
 }
 
-Command & Command::SetControllerGain(const unsigned char &type, const unsigned int &p_gain,
+Command::Command(const enum CommandTypes & cmd_type,
+                                    const unsigned char &type, const unsigned int &p_gain,
                                    const unsigned int &i_gain, const unsigned int &d_gain)
 {
-  Command outgoing;
-  outgoing.data.type = type;
-  outgoing.data.p_gain = p_gain;
-  outgoing.data.i_gain = i_gain;
-  outgoing.data.d_gain = d_gain;
-  outgoing.data.command = Command::SetController;
-  return outgoing;
-}
-
-Command & Command::GetControllerGain()
-{
-  Command outgoing;
-  outgoing.data.command = Command::GetController;
-  outgoing.data.reserved = 0;
-  return outgoing;
+    if(cmd_type != CommandTypes::SET_CONTROLLER_GAIN) {
+        syslog(LOG_ERR, "Invalid.");
+        throw std::exception();
+    }
+  data.type = type;
+  data.p_gain = p_gain;
+  data.i_gain = i_gain;
+  data.d_gain = d_gain;
+  data.command = Command::SetController;
 }
 
 /*****************************************************************************
@@ -202,10 +173,9 @@ Command & Command::GetControllerGain()
  */
 void Command::resetBuffer(Buffer& buffer) {
   buffer.clear();
-  buffer.resize(64);
   buffer.push_back(Command::header0);
   buffer.push_back(Command::header1);
-  buffer.push_back(0); // just initialise, we usually write in the payload here later (size of payload only, not stx, not etx, not length)
+  buffer.push_back(0);
 }
 
 bool Command::serialise(SerialDataBuffer & byteStream)
