@@ -4,7 +4,9 @@
 #include <syslog.h>
 #include <unistd.h>
 #include "socket/ControlSocket.hpp"
-#include "color/ColorStreamThread.hpp"
+#include "color/CameraProcessing.hpp"
+#include "color/BallFinder.hpp"
+#include "pathfinding/PathFinder.hpp"
 #include "extern/kobuki_driver/include/kobuki_driver/kobuki.hpp"
 
 using namespace std;
@@ -15,47 +17,45 @@ int main(int argc, char **argv) {
 	openlog("babocam", LOG_CONS | LOG_PID | LOG_NDELAY, LOG_LOCAL1);
 	syslog(LOG_INFO, "Starting up.");
 
+	Context context;
+	rs2::frame_queue color, depth;
+
+	syslog(LOG_INFO, "Starting Cam.");
+	CameraProcessing * processing = new CameraProcessing(color, depth);
+	processing->start();
+	sleep(2);
+
+    syslog(LOG_INFO, "Starting BallFinder.");
+	BallFinder * ballFinder = new BallFinder(processing->getIntrinsics(), color, depth, &context, 0.12);
+	ballFinder->start();
+
+#define USE_KOBUKI
+#ifdef USE_KOBUKI
+    syslog(LOG_INFO, "Starting Kobuki driver.");
 	kobuki::Kobuki kobuki1;
 	kobuki::Parameters parameters;
 	kobuki1.init(parameters);
 	kobuki1.setControllerGain(0, 100*1000, 100, 2000);
-    kobuki1.setLed(kobuki::LedNumber::Led2, kobuki::LedColour::Black);
-    syslog(LOG_INFO, "Heading %f", kobuki1.getHeading());
-	sleep(2);
-	kobuki1.setLed(kobuki::LedNumber::Led2, kobuki::LedColour::Orange);
-	kobuki1.setBaseControl(150, 0); // 10 mm/s
-	sleep(5);
-	syslog(LOG_INFO, "Heading %f", kobuki1.getHeading());
-	kobuki1.setBaseControl(-150, 0);
-    kobuki1.setLed(kobuki::LedNumber::Led2, kobuki::LedColour::Black);
-    sleep(5);
-    syslog(LOG_INFO, "Heading %f", kobuki1.getHeading());
-    kobuki1.setBaseControl(0, 0);
+
+    syslog(LOG_INFO, "Starting PathFinder.");
+	PathFinder * path = new PathFinder(&context, &kobuki1);
+	path->start();
+#endif
+    sleep(50);
 
 #if 0
-	ControlSocket socket = ControlSocket(4567);
-	if(socket.start() < 0) {
-		syslog(LOG_WARNING, "Failed");
-	}
-
-	syslog(LOG_INFO, "Finishing.");
-
-	rs2::pipeline * cam = new rs2::pipeline();
-	cam->start();
-
-//	DepthStream stream = DepthStream();
-//	stream.init(cam);
-//	stream.start();
-
-	ColorStream color = ColorStream();
-	color.init(cam);
-	color.start();
-	color.stop();
-#endif
-    sleep(5);
-
     syslog(LOG_INFO, "Battery: %f", kobuki1.batteryStatus().capacity);
     cout << "VersionData " << kobuki1.versionInfo().firmware << std::endl;
+
+    syslog(LOG_INFO, "Stopping.");
+#endif
+    path->stop();
+    ballFinder->stop();
+
+#ifdef USE_KOBUKI
+    kobuki1.setBaseControl(0, 0);
+#endif
+    usleep(50);  // Warten, bis der Turtlebot den Stop-Befehl erhalten hat.
 	closelog();
 
 	return 0;

@@ -6,6 +6,7 @@
 #include <opencv2/imgproc.hpp>
 #include <librealsense2/hpp/rs_export.hpp>
 #include <syslog.h>
+#include <opencv2/opencv.hpp>
 #include "BallFinder.hpp"
 #include "../math/Navigator2D.hpp"
 #include "../struct/Context.hpp"
@@ -26,6 +27,7 @@ void BallFinder::run() {
     using namespace cv;
     using namespace rs2;
     colorizer color_map;
+    namedWindow("test", WINDOW_AUTOSIZE);
     while(!m_stop) {
         frame color_frame = color_queue.wait_for_frame();
         depth_frame depth_frame = depth_queue.wait_for_frame().as<rs2::depth_frame>();
@@ -34,7 +36,9 @@ void BallFinder::run() {
         const int h = depth_frame.get_height();
 
         frame colorized_depth = color_map.process(depth_frame);
-        Mat depth_mat = Mat(Size(w, h), CV_16UC1, (void*)colorized_depth.get_data(), Mat::AUTO_STEP);
+        Mat mat = Mat(Size(w, h), CV_8UC3, (void*)colorized_depth.get_data(), Mat::AUTO_STEP);
+        Mat depth_mat;
+        cvtColor(mat, depth_mat, COLOR_BGR2GRAY);
 
         std::vector<std::vector<Point>> contours;
         findContours(depth_mat, contours, RETR_LIST, CHAIN_APPROX_NONE);
@@ -43,15 +47,20 @@ void BallFinder::run() {
             float angle;
             double distance;
             if(checkContour(depth_frame, contour, angle, distance)) {
-                syslog(LOG_INFO, "Possible point found!");
                 ballPositions.emplace_back(distance, angle);
             }
         }
         if(ballPositions.size() == 1) {
             m_context->setBall(ballPositions.front());
+            m_context->getCond().notify_all();
+            syslog(LOG_INFO, "Ball found.");
+        } else if(ballPositions.size() > 1){
+            syslog(LOG_INFO, "multiple possible ball found. %zu", ballPositions.size());
         } else {
             syslog(LOG_INFO, "No possible ball found.");
         }
+        imshow("test", mat);
+        cv::waitKey(1);
     }
 }
 
@@ -62,13 +71,19 @@ bool BallFinder::checkContour(rs2::depth_frame & depth_frame, std::vector<cv::Po
     minEnclosingCircle(vector, center, radius);
     double diameter = radius*2;
 
-    angle = (center.x-depth_frame.get_width())*M_PI/2;
+    if(center.y < 250 || center.y > 550) return false; // Zu weit unten / oben.
 
     distance = depth_frame.get_distance(static_cast<int>(center.x), static_cast<int>(center.y));
+    if(distance < 0.5 || distance > 2.5) return false;
     double idealD = m_diameter * m_intrinsics.fx / distance;
-    if(diameter*0.75 < idealD || diameter*1.5 > idealD) return false;
+    angle = -(center.x-(depth_frame.get_width()*0.5))*M_PI/2;
+
+//    syslog(LOG_DEBUG, "Distance[%f], Diameter[%f -> %f], x[%f], y[%f]", distance, diameter, idealD, center.x, center.y);
+
+    if(diameter*0.75 > idealD || diameter*1.5 < idealD) return false;
 
     double area = contourArea(vector);
+//    syslog(LOG_DEBUG, "Second step[%f < %f]?", area, 0.6*diameter*diameter*M_PI/4);
     if(area < 0.6*diameter*diameter*M_PI/4) return false;
 
 #if 0

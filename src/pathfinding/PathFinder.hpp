@@ -16,14 +16,12 @@
 
 class PathFinder : public IRunnable {
 public:
-	PathFinder(Context * context, std::mutex * data_access, std::condition_variable * cond_var, kobuki::Kobuki * device)
-	    :context(context),cond_var(cond_var),data_access(data_access),device(device) {}
+	PathFinder(Context * context, kobuki::Kobuki * device)
+	    :context(context),device(device) {}
 
 protected:
 	void run() override;
 private:
-	std::mutex * data_access;
-	std::condition_variable * cond_var;
 	kobuki::Kobuki * device;
 	Context * context;
 };

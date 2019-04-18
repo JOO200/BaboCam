@@ -7,16 +7,14 @@
 
 
 #include "../interfaces/IRunnable.hpp"
+#include <librealsense2/rs.hpp>
 
 class CameraProcessing : public IRunnable {
 public:
     CameraProcessing(rs2::frame_queue & color, rs2::frame_queue & depth):color_queue(color),depth_queue(depth) {
-
     }
 
-    void start() override;
-
-    rs2_intrinsics getIntrinsics() const;
+    rs2_intrinsics & getIntrinsics();
 
 protected:
     void run() override;

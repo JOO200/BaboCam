@@ -7,11 +7,10 @@
 #include <librealsense2/hpp/rs_pipeline.hpp>
 #include <librealsense2/rs_advanced_mode.hpp>
 #include <syslog.h>
+#include <fstream>
+#include <opencv2/core/mat.hpp>
+#include <opencv2/opencv.hpp>
 #include "CameraProcessing.hpp"
-
-void CameraProcessing::start() {
-    IRunnable::start();
-}
 
 void CameraProcessing::run() {
     rs2::context ctx;
@@ -23,19 +22,30 @@ void CameraProcessing::run() {
         return;
     }
     syslog(LOG_INFO, "Device found.");
+    selected_device = devices[0];
 
-    selected_device = devices.front();
+    if (selected_device.is<rs400::advanced_mode>())
+    {
+        auto advanced_mode_dev = selected_device.as<rs400::advanced_mode>();
+        // Check if advanced-mode is enabled
+        if (!advanced_mode_dev.is_enabled())
+        {
+            // Enable advanced-mode
+            advanced_mode_dev.toggle_advanced_mode(true);
+        }
+        // Select the custom configuration file
+        std::ifstream t("/home/johannes/dev/BaboCam/my.json");
+        std::string preset_json((std::istreambuf_iterator<char>(t)), std::istreambuf_iterator<char>());
+        syslog(LOG_INFO, "JSON: %s", preset_json.c_str());
+        advanced_mode_dev.load_json(preset_json);
+        syslog(LOG_INFO, "Config loaded.");
 
-    if(!selected_device.is<rs400::advanced_mode>()) {
-        syslog(LOG_ERR, "Incompatible module found. Aborting!");
+    }
+    else
+    {
+        syslog(LOG_ERR, "Current device doesn't support advanced-mode!");
         return;
     }
-
-    rs400::advanced_mode mode(selected_device);
-    if(!mode.is_enabled()) {
-        mode.toggle_advanced_mode(true);
-    }
-    mode.load_json("my.json");
 
     rs2::decimation_filter dec_filter;
     rs2::threshold_filter thr_filter;
@@ -49,30 +59,35 @@ void CameraProcessing::run() {
     filters.push_back(temp_filter);
 
 
-    rs2::pipeline pipe;
+    rs2::pipeline pipe = rs2::pipeline(ctx);
     rs2::config cfg;
+    syslog(LOG_INFO, "Enable config.");
 
     cfg.enable_stream(RS2_STREAM_DEPTH, 1280, 720, RS2_FORMAT_Z16, 6);
-    cfg.enable_stream(RS2_STREAM_COLOR, 1280, 720, 6);
+    cfg.enable_stream(RS2_STREAM_COLOR, 1280, 720, RS2_FORMAT_BGR8, 6);
 
     pipe.start(cfg);
+    syslog(LOG_INFO, "Pipe started.");
 
     intrinsics = pipe.get_active_profile().get_stream(RS2_STREAM_DEPTH).as<rs2::video_stream_profile>().get_intrinsics();
 
+    cv::namedWindow("Test", cv::WINDOW_AUTOSIZE);
     while(!m_stop) {
         rs2::frameset data = pipe.wait_for_frames();
         rs2::depth_frame depth = data.get_depth_frame();
         rs2::frame color = data.get_color_frame();
-
+#define USE_FILTERS
+#ifdef USE_FILTERS
         for(auto & filter : filters) {
             filter.process(depth);
         }
-
+        syslog(LOG_INFO, "Enqueue new image.");
+#endif
         color_queue.enqueue(color);
         depth_queue.enqueue(depth);
     }
 }
 
-rs2_intrinsics CameraProcessing::getIntrinsics() const {
+rs2_intrinsics & CameraProcessing::getIntrinsics() {
     return intrinsics;
 }

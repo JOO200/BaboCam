@@ -17,7 +17,7 @@
 class Context {
 public:
     Context() {
-        m.lock();   // Wir locken am Anfang den Mutex, damit keiner ohne Daten arbeitet.
+        m.unlock();   // Wir locken am Anfang den Mutex, damit keiner ohne Daten arbeitet.
     }
 
     std::condition_variable &getCond() {
