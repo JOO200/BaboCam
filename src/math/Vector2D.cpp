@@ -42,7 +42,3 @@ Vector2D* Vector2D::divide(double px, double py) {
 	return this;
 }
 
-/* VIRTUAL */ void Vector2D::transform(MotionData & data) {
-
-}
-

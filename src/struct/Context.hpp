@@ -9,16 +9,39 @@
 #define SRC_STRUCT_CONTEXT_HPP_
 
 #include <vector>
+#include <condition_variable>
+#include "../math/Navigator2D.hpp"
 
-struct ball_pos {
-	double x, z;
-	double distance;
+#define ball_pos Navigator2D
 
-} ballPos;
+class Context {
+public:
+    Context() {
+        m.lock();   // Wir locken am Anfang den Mutex, damit keiner ohne Daten arbeitet.
+    }
 
-struct context {
-	ball_pos curr_ball;
-} aContext;
+    std::condition_variable &getCond() {
+        return wait;
+    }
+
+    std::mutex &getM() {
+        return m;
+    }
+
+    ball_pos & getBall() {
+        return curr_ball;
+    }
+
+    void setBall(const ball_pos pos) {
+        curr_ball = pos;
+    }
+
+
+private:
+    ball_pos curr_ball;
+    std::condition_variable wait;
+    std::mutex m;
+};
 
 
 

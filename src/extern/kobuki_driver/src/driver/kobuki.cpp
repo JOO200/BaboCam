@@ -430,6 +430,7 @@ namespace kobuki {
         double heading = (static_cast<double>(inertia.data.angle) / 100.0) * M_PI / 180;
         // raw data angles are in hundredths of a degree, convert to radians.
         return (heading - heading_offset);
+
     }
 
     double Kobuki::getAngularVelocity() const {

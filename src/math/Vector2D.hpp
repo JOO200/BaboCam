@@ -8,10 +8,9 @@
 #ifndef SRC_MATH_VECTOR2D_HPP_
 #define SRC_MATH_VECTOR2D_HPP_
 
-#include "Transformable.hpp"
 #include <ctime>
 
-class Vector2D : public ITransformable {
+class Vector2D {
 public:
 	Vector2D(Vector2D & old);
 	Vector2D(double, double);
@@ -32,8 +31,6 @@ public:
 
 	Vector2D* normalize() 		{ return divide(length()); }
 	double length();
-
-	virtual void transform(MotionData & data);
 
 private:
 	double x, y;

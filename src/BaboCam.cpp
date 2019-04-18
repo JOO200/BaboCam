@@ -23,10 +23,10 @@ int main(int argc, char **argv) {
     syslog(LOG_INFO, "Heading %f", kobuki1.getHeading());
 	sleep(2);
 	kobuki1.setLed(kobuki::LedNumber::Led2, kobuki::LedColour::Orange);
-	kobuki1.setBaseControl(150, -200); // 10 mm/s
+	kobuki1.setBaseControl(150, 0); // 10 mm/s
 	sleep(5);
 	syslog(LOG_INFO, "Heading %f", kobuki1.getHeading());
-	kobuki1.setBaseControl(-150, -200);
+	kobuki1.setBaseControl(-150, 0);
     kobuki1.setLed(kobuki::LedNumber::Led2, kobuki::LedColour::Black);
     sleep(5);
     syslog(LOG_INFO, "Heading %f", kobuki1.getHeading());
