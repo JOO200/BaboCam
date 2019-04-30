@@ -17,6 +17,7 @@
 #include "../../../SerialDataBuffer.hpp"
 #include "../../include/kobuki_driver/kobuki.hpp"
 #include "../../include/kobuki_driver/packet_handler/payload_headers.hpp"
+#include "../../../../math/own_math.hpp"
 #include <libserial/SerialPortConstants.h>
 #include <libserial/SerialPort.h>
 #include <syslog.h>
@@ -532,7 +533,7 @@ namespace kobuki {
 
     void Kobuki::sendBaseControlCommand() {
         std::vector<double> velocity_commands_received;
-        /* TODO: Anfahrtsrampen hinzufügen.
+        // TODO: Anfahrtsrampen optimieren.
         if(linear_velocity != curr_linear_velocity) {
             auto diff_velocity = linear_velocity - curr_linear_velocity;
             if(diff_velocity > 5) {
@@ -540,10 +541,15 @@ namespace kobuki {
             } else if(diff_velocity < 10) {
                 curr_linear_velocity -= 10;
             } else curr_linear_velocity = linear_velocity;
-        }*/
-        curr_linear_velocity = linear_velocity;
-        curr_angular_velocity = angular_velocity;
-        sendCommand(Command(kobuki::Command::CommandTypes::VELOCITY_CONTROL, curr_linear_velocity, curr_angular_velocity));
+        }
+        if(acceleration_limiter.isEnabled()) {
+            velocity_commands_received = acceleration_limiter.limit(linear_velocity, angular_velocity);
+        } else {
+            velocity_commands_received.push_back(linear_velocity);
+            velocity_commands_received.push_back(angular_velocity);
+        }
+
+        sendCommand(Command(kobuki::Command::CommandTypes::VELOCITY_CONTROL, velocity_commands_received[0], velocity_commands_received[1]));
 #if 0
         if (acceleration_limiter.isEnabled()) {
             velocity_commands_received = acceleration_limiter.limit(diff_drive.pointVelocity());

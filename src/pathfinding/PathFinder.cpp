@@ -29,26 +29,49 @@ void PathFinder::run() {
             if(device) device->setBaseControl(0, 0);
             continue;
         }
-        if(m_stop) {
-            syslog(LOG_INFO, "Stopping Pathfinding");
-            break;
-        }
-        if(context->getBall().getAngle() == 0 && context->getBall().getDistance() == 0) {
-            syslog(LOG_ERR, "Invalid context found.");
-            break;
-        }
-        double speed, ratio;
+        context->getM().lock();
+        double speed(NAN), ratio(NAN);
 
-        if(std::abs(context->getBall().getAngle()) < MIN_ANGLE) {
-            double distance = context->getBall().getDistance();
-            speed = range(distance*100, 100, 200);
-            ratio = 0;
-        } else {
-            ratio = 1;
-            speed = context->getBall().getAngle() > 0 ? -70 : 70;
+        switch(context->getState()) {
+            case Context::State::FOLLOW:
+                if(m_stop) {
+                    syslog(LOG_INFO, "Stopping Pathfinding");
+                    break;
+                }
+                if(context->getBall().getAngle() == 0 && context->getBall().getDistance() == 0) {
+                    syslog(LOG_ERR, "Invalid context found.");
+                    break;
+                }
+                if(std::abs(context->getBall().getAngle()) < MIN_ANGLE) {
+                    double distance = context->getBall().getDistance();
+                    speed = range(distance*100, 100, 200);
+                    ratio = 0;
+                } else {
+                    ratio = 1;
+                    speed = context->getBall().getAngle() > 0 ? -70 : 70;
+                }
+                if(ratio == 1) {
+                    speed = absRange(speed, 25.0, 70.0);
+                }
+                break;
+            case Context::State::KICK:
+                if(isnan(context->getSharpDx()) || isnan(context->getSharpMaxDist())) {
+                    syslog(LOG_ERR, "Invalid Sharp DX found.");
+                    speed = 0;
+                    ratio = 0;
+                    break;
+                }
+                if(device) {
+                    device->setBaseControl(200, 0);
+                }
+            default:
+                speed = 0;
+                ratio = 0;
+                break;
+
         }
-        if(ratio == 1) {
-            speed = absRange(speed, 25.0, 70.0);
+        if(isnan(speed) || isnan(ratio)) {
+            break;
         }
         start_counter++;
         syslog(LOG_INFO, "Distance %f, angle %f, Speed %f, ratio %f", context->getBall().getDistance(), context->getBall().getAngle(), speed, ratio);

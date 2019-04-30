@@ -9,19 +9,17 @@
 /*****************************************************************************
 ** Ifdefs
 *****************************************************************************/
-
+#if 0
 #ifndef KOBUKI_DIFF_DRIVE_HPP_
 #define KOBUKI_DIFF_DRIVE_HPP_
 
 /*****************************************************************************
 ** Includes
 *****************************************************************************/
-#if 0
 #include <vector>
 #include <climits>
 #include <stdint.h>
-#include "../../../../ecl_mobile_robot/include/ecl/mobile_robot.hpp"
-#include "../../../../ecl_threads/include/ecl/threads/mutex.hpp"
+#include "../../../../../math/Vector3d.hpp"
 #include "../macros.hpp"
 
 /*****************************************************************************
@@ -37,12 +35,12 @@ namespace kobuki {
 class kobuki_PUBLIC DiffDrive {
 public:
   DiffDrive();
-  const ecl::DifferentialDrive::Kinematics& kinematics() { return diff_drive_kinematics; }
+  const std::vector<double>& kinematics() { return diff_drive_kinematics; }
   void update(const uint16_t &time_stamp,
               const uint16_t &left_encoder,
               const uint16_t &right_encoder,
-              ecl::Pose2D<double> &pose_update,
-              ecl::linear_algebra::Vector3d &pose_update_rates);
+              std::vector<double> &pose_update,
+              Vector3d &pose_update_rates);
   void reset();
   void getWheelJointStates(double &wheel_left_angle, double &wheel_left_angle_rate,
                            double &wheel_right_angle, double &wheel_right_angle_rate);
@@ -80,13 +78,13 @@ private:
   int imu_heading_offset;
   const double tick_to_rad;
 
-  ecl::DifferentialDrive::Kinematics diff_drive_kinematics;
-  ecl::Mutex velocity_mutex, state_mutex;
+  std::vector<double> diff_drive_kinematics;
+  std::mutex velocity_mutex, state_mutex;
 
   // Utility
   short bound(const double &value);
 };
 
 } // namespace kobuki
-#endif // if 0
 #endif /* KOBUKI_DIFF_DRIVE_HPP_ */
+#endif

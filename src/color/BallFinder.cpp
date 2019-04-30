@@ -51,7 +51,9 @@ void BallFinder::run() {
             }
         }
         if(ballPositions.size() == 1) {
+            m_context->getM().lock();
             m_context->setBall(ballPositions.front());
+            m_context->getM().unlock();
             m_context->getCond().notify_all();
             syslog(LOG_INFO, "Ball found.");
         } else if(ballPositions.size() > 1){
@@ -74,7 +76,7 @@ bool BallFinder::checkContour(rs2::depth_frame & depth_frame, rs2::frame & color
     if(center.y < 250 || center.y > 550) return false; // Zu weit unten / oben.
 
     distance = depth_frame.get_distance(static_cast<int>(center.x), static_cast<int>(center.y));
-    if(distance < 0.2 || distance > 2.5) return false;
+    if(distance < 0.25 || distance > 5.5) return false;
     double idealD = m_diameter * processing->getDepthIntrinsics().fx / distance;
 //    syslog(LOG_DEBUG, "Distance[%f], Diameter[%f -> %f], x[%f], y[%f]", distance, diameter, idealD, center.x, center.y);
 
@@ -86,6 +88,10 @@ bool BallFinder::checkContour(rs2::depth_frame & depth_frame, rs2::frame & color
     double area = contourArea(vector);
 //    syslog(LOG_DEBUG, "Second step[%f < %f]?", area, 0.6*diameter*diameter*M_PI/4);
     if(area < 0.6*diameter*diameter*M_PI/4) return false;
+    if(distance > 0.2) {
+        m_context->getM().lock();
+        m_context->setState(Context::State::KICK);
+    }
     syslog(LOG_INFO, "distance %f, dx %f, angle %f", distance, dx, angle);
 #ifdef USE_COLOR
     float dy = distance * (center.y - processing->getDepthIntrinsics().ppy) / processing->getDepthIntrinsics().fy;

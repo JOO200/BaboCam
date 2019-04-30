@@ -14,13 +14,13 @@ using namespace std;
 
 int main(int argc, char **argv) {
 
-	setlogmask(LOG_UPTO(LOG_DEBUG));
-	openlog("babocam", LOG_CONS | LOG_PID | LOG_NDELAY, LOG_LOCAL1);
-	syslog(LOG_INFO, "Starting up.");
-
+	setlogmask(LOG_UPTO(LOG_DEBUG)); // Alles ab Debug Loggen
+	openlog("babocam", LOG_CONS | LOG_PID | LOG_NDELAY, LOG_LOCAL1); // Log file öffnen. Siehe auch create_log.sh
+	syslog(LOG_INFO, "Starting up.");   // Erster Log Eintrag.
+    Context context;
 #if 1
-	SharpSocket socket;
-	socket.start();
+	SharpSocket socket(&context);     // Socketthread für Laserdistanzsensoren erstellen
+	socket.start();         // ... und starten
 #endif
 #define ONLY_SHARP
 #ifdef ONLY_SHARP
@@ -28,7 +28,6 @@ int main(int argc, char **argv) {
 #endif
 
 #ifndef ONLY_SHARP
-	Context context;
 	rs2::frame_queue color, depth;
 
 	syslog(LOG_INFO, "Starting Cam.");
@@ -40,7 +39,7 @@ int main(int argc, char **argv) {
 	BallFinder * ballFinder = new BallFinder(processing, color, depth, &context, 0.12);
 	ballFinder->start();
 
-#define USE_KOBUKI
+#undef USE_KOBUKI
 #ifdef USE_KOBUKI
     syslog(LOG_INFO, "Starting Kobuki driver.");
 	kobuki::Kobuki kobuki1;
