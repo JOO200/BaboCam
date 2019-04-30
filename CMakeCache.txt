@@ -202,6 +202,12 @@ OpenCV_DIR:PATH=/usr/local/lib/cmake/opencv4
 //The directory containing a CMake configuration file for libserial.
 libserial_DIR:PATH=libserial_DIR-NOTFOUND
 
+//The directory containing a CMake configuration file for nlohman.
+nlohman_DIR:PATH=nlohman_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for nlohmann_json.
+nlohmann_json_DIR:PATH=/usr/local/lib/cmake/nlohmann_json
+
 //The directory containing a CMake configuration file for realsense2.
 realsense2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/realsense2
 
@@ -360,6 +366,8 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr/local][v4.0.1(4)]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Details about finding nlohmann_json
+FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[/usr/local/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake][v3.6.1()]
 //Result of TRY_COMPILE
 THREADS_HAVE_PTHREAD_ARG:INTERNAL=TRUE
 

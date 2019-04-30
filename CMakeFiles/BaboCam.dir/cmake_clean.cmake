@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o"
   "CMakeFiles/BaboCam.dir/src/math/Vector2D.cpp.o"
   "CMakeFiles/BaboCam.dir/src/pathfinding/PathFinder.cpp.o"
+  "CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.o"
   "CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.o"
   "CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.o"
   "BaboCam.pdb"

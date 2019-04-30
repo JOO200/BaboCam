@@ -69,7 +69,8 @@ void CameraProcessing::run() {
     pipe.start(cfg);
     syslog(LOG_INFO, "Pipe started.");
 
-    intrinsics = pipe.get_active_profile().get_stream(RS2_STREAM_DEPTH).as<rs2::video_stream_profile>().get_intrinsics();
+    depth_intrinsics = pipe.get_active_profile().get_stream(RS2_STREAM_DEPTH).as<rs2::video_stream_profile>().get_intrinsics();
+    color_intrinsics = pipe.get_active_profile().get_stream(RS2_STREAM_COLOR).as<rs2::video_stream_profile>().get_intrinsics();
 
     cv::namedWindow("Test", cv::WINDOW_AUTOSIZE);
     while(!m_stop) {
@@ -81,13 +82,8 @@ void CameraProcessing::run() {
         for(auto & filter : filters) {
             filter.process(depth);
         }
-        syslog(LOG_INFO, "Enqueue new image.");
 #endif
         color_queue.enqueue(color);
         depth_queue.enqueue(depth);
     }
-}
-
-rs2_intrinsics & CameraProcessing::getIntrinsics() {
-    return intrinsics;
 }

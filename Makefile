@@ -501,6 +501,33 @@ src/pathfinding/PathFinder.cpp.s:
 	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/pathfinding/PathFinder.cpp.s
 .PHONY : src/pathfinding/PathFinder.cpp.s
 
+src/sharp/SharpSocket.o: src/sharp/SharpSocket.cpp.o
+
+.PHONY : src/sharp/SharpSocket.o
+
+# target to build an object file
+src/sharp/SharpSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.o
+.PHONY : src/sharp/SharpSocket.cpp.o
+
+src/sharp/SharpSocket.i: src/sharp/SharpSocket.cpp.i
+
+.PHONY : src/sharp/SharpSocket.i
+
+# target to preprocess a source file
+src/sharp/SharpSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.i
+.PHONY : src/sharp/SharpSocket.cpp.i
+
+src/sharp/SharpSocket.s: src/sharp/SharpSocket.cpp.s
+
+.PHONY : src/sharp/SharpSocket.s
+
+# target to generate assembly for a file
+src/sharp/SharpSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.s
+.PHONY : src/sharp/SharpSocket.cpp.s
+
 src/socket/ControlSocket.o: src/socket/ControlSocket.cpp.o
 
 .PHONY : src/socket/ControlSocket.o
@@ -606,6 +633,9 @@ help:
 	@echo "... src/pathfinding/PathFinder.o"
 	@echo "... src/pathfinding/PathFinder.i"
 	@echo "... src/pathfinding/PathFinder.s"
+	@echo "... src/sharp/SharpSocket.o"
+	@echo "... src/sharp/SharpSocket.i"
+	@echo "... src/sharp/SharpSocket.s"
 	@echo "... src/socket/ControlSocket.o"
 	@echo "... src/socket/ControlSocket.i"
 	@echo "... src/socket/ControlSocket.s"

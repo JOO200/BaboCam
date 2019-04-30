@@ -8,6 +8,7 @@
 #include "color/BallFinder.hpp"
 #include "pathfinding/PathFinder.hpp"
 #include "extern/kobuki_driver/include/kobuki_driver/kobuki.hpp"
+#include "sharp/SharpSocket.hpp"
 
 using namespace std;
 
@@ -17,6 +18,16 @@ int main(int argc, char **argv) {
 	openlog("babocam", LOG_CONS | LOG_PID | LOG_NDELAY, LOG_LOCAL1);
 	syslog(LOG_INFO, "Starting up.");
 
+#if 1
+	SharpSocket socket;
+	socket.start();
+#endif
+#define ONLY_SHARP
+#ifdef ONLY_SHARP
+	socket.join();
+#endif
+
+#ifndef ONLY_SHARP
 	Context context;
 	rs2::frame_queue color, depth;
 
@@ -26,7 +37,7 @@ int main(int argc, char **argv) {
 	sleep(2);
 
     syslog(LOG_INFO, "Starting BallFinder.");
-	BallFinder * ballFinder = new BallFinder(processing->getIntrinsics(), color, depth, &context, 0.12);
+	BallFinder * ballFinder = new BallFinder(processing, color, depth, &context, 0.12);
 	ballFinder->start();
 
 #define USE_KOBUKI
@@ -40,10 +51,14 @@ int main(int argc, char **argv) {
     syslog(LOG_INFO, "Starting PathFinder.");
 	PathFinder * path = new PathFinder(&context, &kobuki1);
 	path->start();
+#else
+	syslog(LOG_WARNING, "Starting PathFinder with dummy Kobuki driver.");
+	PathFinder * path = new PathFinder(&context, nullptr);
+	path->start();
 #endif
-    sleep(50);
+    sleep(500);
 
-#if 0
+#ifdef USE_KOBUKI
     syslog(LOG_INFO, "Battery: %f", kobuki1.batteryStatus().capacity);
     cout << "VersionData " << kobuki1.versionInfo().firmware << std::endl;
 
@@ -54,6 +69,7 @@ int main(int argc, char **argv) {
 
 #ifdef USE_KOBUKI
     kobuki1.setBaseControl(0, 0);
+#endif
 #endif
     usleep(50);  // Warten, bis der Turtlebot den Stop-Befehl erhalten hat.
 	closelog();

@@ -1,4 +1,5 @@
 /home/johannes/Schreibtisch/clion-2018.3.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/johannes/dev/BaboCam
+-- Found nlohmann_json: /usr/local/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake (found version "3.6.1") 
 -- OpenCV library status:
 -- 	version 4.0.1
 -- Configuring done

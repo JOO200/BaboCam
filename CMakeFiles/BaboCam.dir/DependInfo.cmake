@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/packet_finder.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o"
   "/home/johannes/dev/BaboCam/src/math/Vector2D.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/math/Vector2D.cpp.o"
   "/home/johannes/dev/BaboCam/src/pathfinding/PathFinder.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/pathfinding/PathFinder.cpp.o"
+  "/home/johannes/dev/BaboCam/src/sharp/SharpSocket.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.o"
   "/home/johannes/dev/BaboCam/src/socket/ControlSocket.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.o"
   "/home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.o"
   )
@@ -26,6 +27,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/local/include/opencv4"
+  "/usr/local/include"
   )
 
 # Targets to which this target links.
