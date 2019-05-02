@@ -278,6 +278,32 @@ CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.cpp -o CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.s
 
+CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o: CMakeFiles/BaboCam.dir/flags.make
+CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o: src/strategy/DriveToBall.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o -c /home/johannes/dev/BaboCam/src/strategy/DriveToBall.cpp
+
+CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/johannes/dev/BaboCam/src/strategy/DriveToBall.cpp > CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.i
+
+CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/johannes/dev/BaboCam/src/strategy/DriveToBall.cpp -o CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.s
+
+CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o: CMakeFiles/BaboCam.dir/flags.make
+CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o: src/strategy/KickBall.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o -c /home/johannes/dev/BaboCam/src/strategy/KickBall.cpp
+
+CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/johannes/dev/BaboCam/src/strategy/KickBall.cpp > CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.i
+
+CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/johannes/dev/BaboCam/src/strategy/KickBall.cpp -o CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.s
+
 # Object files for target BaboCam
 BaboCam_OBJECTS = \
 "CMakeFiles/BaboCam.dir/src/BaboCam.cpp.o" \
@@ -296,7 +322,9 @@ BaboCam_OBJECTS = \
 "CMakeFiles/BaboCam.dir/src/pathfinding/PathFinder.cpp.o" \
 "CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.o" \
 "CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.o" \
-"CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.o"
+"CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.o" \
+"CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o" \
+"CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o"
 
 # External object files for target BaboCam
 BaboCam_EXTERNAL_OBJECTS =
@@ -318,6 +346,8 @@ BaboCam: CMakeFiles/BaboCam.dir/src/pathfinding/PathFinder.cpp.o
 BaboCam: CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.o
 BaboCam: CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.o
 BaboCam: CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.o
+BaboCam: CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o
+BaboCam: CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o
 BaboCam: CMakeFiles/BaboCam.dir/build.make
 BaboCam: /usr/local/lib/libopencv_dnn.so.4.0.1
 BaboCam: /usr/local/lib/libopencv_gapi.so.4.0.1
@@ -335,7 +365,7 @@ BaboCam: /usr/local/lib/libopencv_imgcodecs.so.4.0.1
 BaboCam: /usr/local/lib/libopencv_imgproc.so.4.0.1
 BaboCam: /usr/local/lib/libopencv_core.so.4.0.1
 BaboCam: CMakeFiles/BaboCam.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable BaboCam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable BaboCam"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BaboCam.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

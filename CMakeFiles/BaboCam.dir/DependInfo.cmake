@@ -21,6 +21,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/johannes/dev/BaboCam/src/sharp/SharpSocket.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.o"
   "/home/johannes/dev/BaboCam/src/socket/ControlSocket.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.o"
   "/home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.o"
+  "/home/johannes/dev/BaboCam/src/strategy/DriveToBall.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o"
+  "/home/johannes/dev/BaboCam/src/strategy/KickBall.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -222,6 +222,9 @@
 		<Unit filename="/home/johannes/dev/BaboCam/src/interfaces/IRunnable.hpp">
 			<Option target="BaboCam"/>
 		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/interfaces/MovableDevice.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
 		<Unit filename="/home/johannes/dev/BaboCam/src/math/Navigator2D.hpp">
 			<Option target="BaboCam"/>
 		</Unit>
@@ -240,6 +243,9 @@
 		<Unit filename="/home/johannes/dev/BaboCam/src/pathfinding/PathFinder.hpp">
 			<Option target="BaboCam"/>
 		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/pathfinding/StopNowException.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
 		<Unit filename="/home/johannes/dev/BaboCam/src/sharp/SharpSocket.cpp">
 			<Option target="BaboCam"/>
 		</Unit>
@@ -256,6 +262,18 @@
 			<Option target="BaboCam"/>
 		</Unit>
 		<Unit filename="/home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/strategy/DriveToBall.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/strategy/DriveToBall.hpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/strategy/KickBall.cpp">
+			<Option target="BaboCam"/>
+		</Unit>
+		<Unit filename="/home/johannes/dev/BaboCam/src/strategy/KickBall.hpp">
 			<Option target="BaboCam"/>
 		</Unit>
 		<Unit filename="/home/johannes/dev/BaboCam/src/struct/Context.hpp">

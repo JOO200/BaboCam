@@ -582,6 +582,60 @@ src/strategy/AbstractStrategy.cpp.s:
 	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.s
 .PHONY : src/strategy/AbstractStrategy.cpp.s
 
+src/strategy/DriveToBall.o: src/strategy/DriveToBall.cpp.o
+
+.PHONY : src/strategy/DriveToBall.o
+
+# target to build an object file
+src/strategy/DriveToBall.cpp.o:
+	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o
+.PHONY : src/strategy/DriveToBall.cpp.o
+
+src/strategy/DriveToBall.i: src/strategy/DriveToBall.cpp.i
+
+.PHONY : src/strategy/DriveToBall.i
+
+# target to preprocess a source file
+src/strategy/DriveToBall.cpp.i:
+	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.i
+.PHONY : src/strategy/DriveToBall.cpp.i
+
+src/strategy/DriveToBall.s: src/strategy/DriveToBall.cpp.s
+
+.PHONY : src/strategy/DriveToBall.s
+
+# target to generate assembly for a file
+src/strategy/DriveToBall.cpp.s:
+	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.s
+.PHONY : src/strategy/DriveToBall.cpp.s
+
+src/strategy/KickBall.o: src/strategy/KickBall.cpp.o
+
+.PHONY : src/strategy/KickBall.o
+
+# target to build an object file
+src/strategy/KickBall.cpp.o:
+	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o
+.PHONY : src/strategy/KickBall.cpp.o
+
+src/strategy/KickBall.i: src/strategy/KickBall.cpp.i
+
+.PHONY : src/strategy/KickBall.i
+
+# target to preprocess a source file
+src/strategy/KickBall.cpp.i:
+	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.i
+.PHONY : src/strategy/KickBall.cpp.i
+
+src/strategy/KickBall.s: src/strategy/KickBall.cpp.s
+
+.PHONY : src/strategy/KickBall.s
+
+# target to generate assembly for a file
+src/strategy/KickBall.cpp.s:
+	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.s
+.PHONY : src/strategy/KickBall.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -642,6 +696,12 @@ help:
 	@echo "... src/strategy/AbstractStrategy.o"
 	@echo "... src/strategy/AbstractStrategy.i"
 	@echo "... src/strategy/AbstractStrategy.s"
+	@echo "... src/strategy/DriveToBall.o"
+	@echo "... src/strategy/DriveToBall.i"
+	@echo "... src/strategy/DriveToBall.s"
+	@echo "... src/strategy/KickBall.o"
+	@echo "... src/strategy/KickBall.i"
+	@echo "... src/strategy/KickBall.s"
 .PHONY : help
 
 

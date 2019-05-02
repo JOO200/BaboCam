@@ -93,10 +93,14 @@ void SharpSocket::run() {
         syslog(LOG_INFO, "Voltages[%f, %f, %f, %f]", voltages[0], voltages[1], voltages[2], voltages[3]);
         syslog(LOG_INFO, "Position: %f", position);
 
-        m_context->getM().lock();
+        m_context->getDataMutex().lock();
         m_context->setSharpDx(position);
         m_context->setSharpMaxDist(maxDist);
-        m_context->getM().unlock();
+        Context::State curr_state = m_context->getState();
+        m_context->getDataMutex().unlock();
+        if(curr_state == Context::State::KICK) {
+            m_context->getCond().notify_all();
+        }
 
 
         std::this_thread::sleep_for(std::chrono::milliseconds(500));

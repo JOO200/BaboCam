@@ -16,6 +16,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.o"
   "CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.o"
   "CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.o"
+  "CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o"
+  "CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o"
   "BaboCam.pdb"
   "BaboCam"
 )

@@ -8,13 +8,15 @@
 #ifndef SRC_STRATEGY_ABSTRACTSTRATEGY_HPP_
 #define SRC_STRATEGY_ABSTRACTSTRATEGY_HPP_
 
+#include "../struct/Context.hpp"
+#include "../interfaces/MovableDevice.hpp"
+
 class AbstractStrategy {
 public:
-	AbstractStrategy();
-	virtual ~AbstractStrategy();
+	AbstractStrategy() = default;
+	virtual ~AbstractStrategy() = default;
 
-	virtual void step() = 0;
-	virtual AbstractStrategy* changeCheck() = 0;
+	virtual void step(Context * curr_context, MovableDevice * kobuki, std::atomic<bool>& m_stop) = 0;
 };
 
 

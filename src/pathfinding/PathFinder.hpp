@@ -13,17 +13,23 @@
 #include "../struct/Context.hpp"
 #include "../interfaces/IRunnable.hpp"
 #include "../extern/kobuki_driver/include/kobuki_driver/kobuki.hpp"
+#include "../strategy/DriveToBall.hpp"
+#include "../strategy/KickBall.hpp"
 
 class PathFinder : public IRunnable {
 public:
-	PathFinder(Context * context, kobuki::Kobuki * device)
+	PathFinder(Context * context, MovableDevice * device)
 	    :context(context),device(device) {}
 
 protected:
 	void run() override;
 private:
-	kobuki::Kobuki * device;
+	MovableDevice * device;
 	Context * context;
+
+	// AbstractStrategies
+	DriveToBall drive;
+	KickBall kick;
 };
 
 

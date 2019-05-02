@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /home/johannes/dev/BaboCam
 CMakeFiles/BaboCam.dir/all:
 	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/depend
 	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target BaboCam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 "Built target BaboCam"
 .PHONY : CMakeFiles/BaboCam.dir/all
 
 # Include target in all.
@@ -81,7 +81,7 @@ all: CMakeFiles/BaboCam.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/BaboCam.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/johannes/dev/BaboCam/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/johannes/dev/BaboCam/CMakeFiles 20
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/BaboCam.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/johannes/dev/BaboCam/CMakeFiles 0
 .PHONY : CMakeFiles/BaboCam.dir/rule

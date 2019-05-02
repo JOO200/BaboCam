@@ -37,10 +37,14 @@ CMakeFiles/BaboCam.dir/src/BaboCam.cpp.o
  /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/version_info.hpp
  /home/johannes/dev/BaboCam/src/extern/standard_exception.hpp
  /home/johannes/dev/BaboCam/src/interfaces/IRunnable.hpp
+ /home/johannes/dev/BaboCam/src/interfaces/MovableDevice.hpp
  /home/johannes/dev/BaboCam/src/math/Navigator2D.hpp
  /home/johannes/dev/BaboCam/src/pathfinding/PathFinder.hpp
  /home/johannes/dev/BaboCam/src/sharp/SharpSocket.hpp
  /home/johannes/dev/BaboCam/src/socket/ControlSocket.hpp
+ /home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.hpp
+ /home/johannes/dev/BaboCam/src/strategy/DriveToBall.hpp
+ /home/johannes/dev/BaboCam/src/strategy/KickBall.hpp
  /home/johannes/dev/BaboCam/src/struct/Context.hpp
  /usr/local/include/boost/assert.hpp
  /usr/local/include/boost/config.hpp
@@ -437,6 +441,100 @@ CMakeFiles/BaboCam.dir/src/color/CameraProcessing.cpp.o
  /home/johannes/dev/BaboCam/src/color/CameraProcessing.cpp
  /home/johannes/dev/BaboCam/src/color/CameraProcessing.hpp
  /home/johannes/dev/BaboCam/src/interfaces/IRunnable.hpp
+ /usr/local/include/boost/assert.hpp
+ /usr/local/include/boost/config.hpp
+ /usr/local/include/boost/config/compiler/borland.hpp
+ /usr/local/include/boost/config/compiler/clang.hpp
+ /usr/local/include/boost/config/compiler/codegear.hpp
+ /usr/local/include/boost/config/compiler/comeau.hpp
+ /usr/local/include/boost/config/compiler/common_edg.hpp
+ /usr/local/include/boost/config/compiler/compaq_cxx.hpp
+ /usr/local/include/boost/config/compiler/cray.hpp
+ /usr/local/include/boost/config/compiler/digitalmars.hpp
+ /usr/local/include/boost/config/compiler/gcc.hpp
+ /usr/local/include/boost/config/compiler/gcc_xml.hpp
+ /usr/local/include/boost/config/compiler/greenhills.hpp
+ /usr/local/include/boost/config/compiler/hp_acc.hpp
+ /usr/local/include/boost/config/compiler/intel.hpp
+ /usr/local/include/boost/config/compiler/kai.hpp
+ /usr/local/include/boost/config/compiler/metrowerks.hpp
+ /usr/local/include/boost/config/compiler/mpw.hpp
+ /usr/local/include/boost/config/compiler/nvcc.hpp
+ /usr/local/include/boost/config/compiler/pathscale.hpp
+ /usr/local/include/boost/config/compiler/pgi.hpp
+ /usr/local/include/boost/config/compiler/sgi_mipspro.hpp
+ /usr/local/include/boost/config/compiler/sunpro_cc.hpp
+ /usr/local/include/boost/config/compiler/vacpp.hpp
+ /usr/local/include/boost/config/compiler/visualc.hpp
+ /usr/local/include/boost/config/no_tr1/utility.hpp
+ /usr/local/include/boost/config/platform/aix.hpp
+ /usr/local/include/boost/config/platform/amigaos.hpp
+ /usr/local/include/boost/config/platform/beos.hpp
+ /usr/local/include/boost/config/platform/bsd.hpp
+ /usr/local/include/boost/config/platform/cray.hpp
+ /usr/local/include/boost/config/platform/cygwin.hpp
+ /usr/local/include/boost/config/platform/hpux.hpp
+ /usr/local/include/boost/config/platform/irix.hpp
+ /usr/local/include/boost/config/platform/linux.hpp
+ /usr/local/include/boost/config/platform/macos.hpp
+ /usr/local/include/boost/config/platform/qnxnto.hpp
+ /usr/local/include/boost/config/platform/solaris.hpp
+ /usr/local/include/boost/config/platform/symbian.hpp
+ /usr/local/include/boost/config/platform/vms.hpp
+ /usr/local/include/boost/config/platform/vxworks.hpp
+ /usr/local/include/boost/config/platform/win32.hpp
+ /usr/local/include/boost/config/posix_features.hpp
+ /usr/local/include/boost/config/select_compiler_config.hpp
+ /usr/local/include/boost/config/select_platform_config.hpp
+ /usr/local/include/boost/config/select_stdlib_config.hpp
+ /usr/local/include/boost/config/stdlib/dinkumware.hpp
+ /usr/local/include/boost/config/stdlib/libcomo.hpp
+ /usr/local/include/boost/config/stdlib/libcpp.hpp
+ /usr/local/include/boost/config/stdlib/libstdcpp3.hpp
+ /usr/local/include/boost/config/stdlib/modena.hpp
+ /usr/local/include/boost/config/stdlib/msl.hpp
+ /usr/local/include/boost/config/stdlib/roguewave.hpp
+ /usr/local/include/boost/config/stdlib/sgi.hpp
+ /usr/local/include/boost/config/stdlib/stlport.hpp
+ /usr/local/include/boost/config/stdlib/vacpp.hpp
+ /usr/local/include/boost/config/suffix.hpp
+ /usr/local/include/boost/config/user.hpp
+ /usr/local/include/boost/core/addressof.hpp
+ /usr/local/include/boost/core/no_exceptions_support.hpp
+ /usr/local/include/boost/current_function.hpp
+ /usr/local/include/boost/detail/dynamic_bitset.hpp
+ /usr/local/include/boost/detail/iterator.hpp
+ /usr/local/include/boost/detail/no_exceptions_support.hpp
+ /usr/local/include/boost/detail/workaround.hpp
+ /usr/local/include/boost/dynamic_bitset.hpp
+ /usr/local/include/boost/dynamic_bitset/config.hpp
+ /usr/local/include/boost/dynamic_bitset/dynamic_bitset.hpp
+ /usr/local/include/boost/dynamic_bitset_fwd.hpp
+ /usr/local/include/boost/exception/exception.hpp
+ /usr/local/include/boost/integer/integer_log2.hpp
+ /usr/local/include/boost/limits.hpp
+ /usr/local/include/boost/move/algo/move.hpp
+ /usr/local/include/boost/move/algorithm.hpp
+ /usr/local/include/boost/move/core.hpp
+ /usr/local/include/boost/move/detail/config_begin.hpp
+ /usr/local/include/boost/move/detail/config_end.hpp
+ /usr/local/include/boost/move/detail/iterator_traits.hpp
+ /usr/local/include/boost/move/detail/meta_utils.hpp
+ /usr/local/include/boost/move/detail/meta_utils_core.hpp
+ /usr/local/include/boost/move/detail/std_ns_begin.hpp
+ /usr/local/include/boost/move/detail/std_ns_end.hpp
+ /usr/local/include/boost/move/detail/type_traits.hpp
+ /usr/local/include/boost/move/detail/workaround.hpp
+ /usr/local/include/boost/move/iterator.hpp
+ /usr/local/include/boost/move/move.hpp
+ /usr/local/include/boost/move/traits.hpp
+ /usr/local/include/boost/move/utility.hpp
+ /usr/local/include/boost/move/utility_core.hpp
+ /usr/local/include/boost/pending/integer_log2.hpp
+ /usr/local/include/boost/pending/lowest_bit.hpp
+ /usr/local/include/boost/static_assert.hpp
+ /usr/local/include/boost/throw_exception.hpp
+ /usr/local/include/boost/utility/addressof.hpp
  /usr/local/include/opencv4/opencv2/calib3d.hpp
  /usr/local/include/opencv4/opencv2/core.hpp
  /usr/local/include/opencv4/opencv2/core/affine.hpp
@@ -708,11 +806,18 @@ CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/kobuki.cpp.o
  /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/version_info.hpp
  /home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/kobuki.cpp
  /home/johannes/dev/BaboCam/src/extern/standard_exception.hpp
+ /home/johannes/dev/BaboCam/src/math/own_math.hpp
+ /usr/local/include/libserial/SerialPort.h
+ /usr/local/include/libserial/SerialPortConstants.h
+ /usr/local/include/libserial/SerialStream.h
+ /usr/local/include/libserial/SerialStreamBuf.h
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o
  /home/johannes/dev/BaboCam/src/extern/SerialDataBuffer.hpp
  /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/macros.hpp
  /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/packet_finder.hpp
  /home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/packet_finder.cpp
+ /usr/local/include/libserial/SerialPort.h
+ /usr/local/include/libserial/SerialPortConstants.h
 CMakeFiles/BaboCam.dir/src/math/Vector2D.cpp.o
  /home/johannes/dev/BaboCam/src/math/Vector2D.cpp
  /home/johannes/dev/BaboCam/src/math/Vector2D.hpp
@@ -749,10 +854,15 @@ CMakeFiles/BaboCam.dir/src/pathfinding/PathFinder.cpp.o
  /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/version_info.hpp
  /home/johannes/dev/BaboCam/src/extern/standard_exception.hpp
  /home/johannes/dev/BaboCam/src/interfaces/IRunnable.hpp
+ /home/johannes/dev/BaboCam/src/interfaces/MovableDevice.hpp
  /home/johannes/dev/BaboCam/src/math/Navigator2D.hpp
  /home/johannes/dev/BaboCam/src/math/own_math.hpp
  /home/johannes/dev/BaboCam/src/pathfinding/PathFinder.cpp
  /home/johannes/dev/BaboCam/src/pathfinding/PathFinder.hpp
+ /home/johannes/dev/BaboCam/src/pathfinding/StopNowException.hpp
+ /home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.hpp
+ /home/johannes/dev/BaboCam/src/strategy/DriveToBall.hpp
+ /home/johannes/dev/BaboCam/src/strategy/KickBall.hpp
  /home/johannes/dev/BaboCam/src/struct/Context.hpp
  /usr/local/include/libserial/SerialPort.h
  /usr/local/include/libserial/SerialPortConstants.h
@@ -760,11 +870,137 @@ CMakeFiles/BaboCam.dir/src/pathfinding/PathFinder.cpp.o
  /usr/local/include/libserial/SerialStreamBuf.h
 CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.o
  /home/johannes/dev/BaboCam/src/interfaces/IRunnable.hpp
+ /home/johannes/dev/BaboCam/src/math/Navigator2D.hpp
  /home/johannes/dev/BaboCam/src/sharp/SharpSocket.cpp
  /home/johannes/dev/BaboCam/src/sharp/SharpSocket.hpp
+ /home/johannes/dev/BaboCam/src/struct/Context.hpp
 CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.o
  /home/johannes/dev/BaboCam/src/socket/ControlSocket.cpp
  /home/johannes/dev/BaboCam/src/socket/ControlSocket.hpp
 CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.o
+ /home/johannes/dev/BaboCam/src/extern/SerialDataBuffer.hpp
+ /home/johannes/dev/BaboCam/src/extern/Signal.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/command.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/event_manager.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/kobuki.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/macros.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/acceleration_limiter.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/battery.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/digital_output.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/led_array.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/sound.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/packet_finder.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_base.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_headers.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/cliff.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/controller_info.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/core_sensors.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/current.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/dock_ir.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/firmware.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/gp_input.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/hardware.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/inertia.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/three_axis_gyro.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/unique_device_id.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/parameters.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/version_info.hpp
+ /home/johannes/dev/BaboCam/src/extern/standard_exception.hpp
+ /home/johannes/dev/BaboCam/src/interfaces/MovableDevice.hpp
+ /home/johannes/dev/BaboCam/src/math/Navigator2D.hpp
  /home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.cpp
  /home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.hpp
+ /home/johannes/dev/BaboCam/src/struct/Context.hpp
+ /usr/local/include/libserial/SerialPort.h
+ /usr/local/include/libserial/SerialPortConstants.h
+ /usr/local/include/libserial/SerialStream.h
+ /usr/local/include/libserial/SerialStreamBuf.h
+CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o
+ /home/johannes/dev/BaboCam/src/extern/SerialDataBuffer.hpp
+ /home/johannes/dev/BaboCam/src/extern/Signal.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/command.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/event_manager.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/kobuki.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/macros.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/acceleration_limiter.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/battery.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/digital_output.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/led_array.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/sound.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/packet_finder.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_base.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_headers.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/cliff.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/controller_info.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/core_sensors.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/current.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/dock_ir.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/firmware.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/gp_input.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/hardware.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/inertia.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/three_axis_gyro.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/unique_device_id.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/parameters.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/version_info.hpp
+ /home/johannes/dev/BaboCam/src/extern/standard_exception.hpp
+ /home/johannes/dev/BaboCam/src/interfaces/MovableDevice.hpp
+ /home/johannes/dev/BaboCam/src/math/Navigator2D.hpp
+ /home/johannes/dev/BaboCam/src/math/own_math.hpp
+ /home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.hpp
+ /home/johannes/dev/BaboCam/src/strategy/DriveToBall.cpp
+ /home/johannes/dev/BaboCam/src/strategy/DriveToBall.hpp
+ /home/johannes/dev/BaboCam/src/struct/Context.hpp
+ /usr/local/include/libserial/SerialPort.h
+ /usr/local/include/libserial/SerialPortConstants.h
+ /usr/local/include/libserial/SerialStream.h
+ /usr/local/include/libserial/SerialStreamBuf.h
+CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o
+ /home/johannes/dev/BaboCam/src/extern/SerialDataBuffer.hpp
+ /home/johannes/dev/BaboCam/src/extern/Signal.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/command.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/event_manager.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/kobuki.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/macros.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/acceleration_limiter.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/battery.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/digital_output.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/led_array.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/modules/sound.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/packet_finder.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_base.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/payload_headers.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/cliff.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/controller_info.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/core_sensors.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/current.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/dock_ir.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/firmware.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/gp_input.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/hardware.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/inertia.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/three_axis_gyro.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packets/unique_device_id.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/parameters.hpp
+ /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/version_info.hpp
+ /home/johannes/dev/BaboCam/src/extern/standard_exception.hpp
+ /home/johannes/dev/BaboCam/src/interfaces/MovableDevice.hpp
+ /home/johannes/dev/BaboCam/src/math/Navigator2D.hpp
+ /home/johannes/dev/BaboCam/src/pathfinding/StopNowException.hpp
+ /home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.hpp
+ /home/johannes/dev/BaboCam/src/strategy/KickBall.cpp
+ /home/johannes/dev/BaboCam/src/strategy/KickBall.hpp
+ /home/johannes/dev/BaboCam/src/struct/Context.hpp
+ /usr/local/include/libserial/SerialPort.h
+ /usr/local/include/libserial/SerialPortConstants.h
+ /usr/local/include/libserial/SerialStream.h
+ /usr/local/include/libserial/SerialStreamBuf.h

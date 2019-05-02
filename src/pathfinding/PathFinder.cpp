@@ -12,73 +12,58 @@
 #include <math.h>
 #include "PathFinder.hpp"
 #include "../math/own_math.hpp"
+#include "StopNowException.hpp"
 
 #define MIN_ANGLE 0.2
-#define MIDDLE_ANGLE 0.25
 
 void PathFinder::run() {
-    static int start_counter = 0;
     syslog(LOG_INFO, "Starting pathfinder.");
     std::unique_lock<std::mutex> lck(context->getM());
 
     syslog(LOG_INFO, "While-Loop");
+    std::cv_status returnVal;
     while(!m_stop) {
-        std::cv_status returnVal = context->getCond().wait_for(lck, std::chrono::seconds(2));
-        if(returnVal == std::cv_status::timeout) {
-            syslog(LOG_ERR, "Timeout");
-            if(device) device->setBaseControl(0, 0);
-            continue;
-        }
-        context->getM().lock();
-        double speed(NAN), ratio(NAN);
+        try {
+            switch (context->getState()) {
+                case Context::State::FOLLOW:
+                    returnVal = context->getCond().wait_for(lck, std::chrono::seconds(2));
+                    if(returnVal == std::cv_status::timeout) {
+                        syslog(LOG_ERR, "Timeout");
+                        device->setMove(0, 0);
+                        break;
+                    }
+                    drive.step(context, device, m_stop);
+                    break;
+                case Context::State::KICK:
+                    device->setMove(100, 0);
+                    std::this_thread::sleep_for(std::chrono::milliseconds(800));
+                    device->setMove(0, 0);
+                    returnVal = context->getCond().wait_for(lck, std::chrono::seconds(2));
+                    if(returnVal == std::cv_status::timeout) {
+                        syslog(LOG_ERR, "Timeout");
+                        device->setMove(0, 0);
+                        continue;
+                    }
+                    kick.step(context, device, m_stop);
+                    break;
+                case Context::State::WAIT:
+                    device->setMove(0, 0);
+                    std::this_thread::sleep_for(std::chrono::seconds(30));
+                    context->setState(Context::State::FOLLOW);
+                    break;
+                default:
+                    syslog(LOG_WARNING, "Unknown State received. Stopping Device and wait for valid State.");
+                    device->setMove(0, 0);
+                    break;
 
-        switch(context->getState()) {
-            case Context::State::FOLLOW:
-                if(m_stop) {
-                    syslog(LOG_INFO, "Stopping Pathfinding");
-                    break;
-                }
-                if(context->getBall().getAngle() == 0 && context->getBall().getDistance() == 0) {
-                    syslog(LOG_ERR, "Invalid context found.");
-                    break;
-                }
-                if(std::abs(context->getBall().getAngle()) < MIN_ANGLE) {
-                    double distance = context->getBall().getDistance();
-                    speed = range(distance*100, 100, 200);
-                    ratio = 0;
-                } else {
-                    ratio = 1;
-                    speed = context->getBall().getAngle() > 0 ? -70 : 70;
-                }
-                if(ratio == 1) {
-                    speed = absRange(speed, 25.0, 70.0);
-                }
-                break;
-            case Context::State::KICK:
-                if(isnan(context->getSharpDx()) || isnan(context->getSharpMaxDist())) {
-                    syslog(LOG_ERR, "Invalid Sharp DX found.");
-                    speed = 0;
-                    ratio = 0;
-                    break;
-                }
-                if(device) {
-                    device->setBaseControl(200, 0);
-                }
-            default:
-                speed = 0;
-                ratio = 0;
-                break;
-
-        }
-        if(isnan(speed) || isnan(ratio)) {
+            }
+        } catch (StopNowException& ex) {
+            syslog(LOG_ERR, "Stop now!");
             break;
         }
-        start_counter++;
-        syslog(LOG_INFO, "Distance %f, angle %f, Speed %f, ratio %f", context->getBall().getDistance(), context->getBall().getAngle(), speed, ratio);
+        // syslog(LOG_INFO, "Distance %f, angle %f, Speed %f, ratio %f", context->getBall().getDistance(), context->getBall().getAngle(), speed, ratio);
 
-        if(device && start_counter > 5) // wir warten etwas, bevor wir losfahren. Das Bild stabilisiert sich erst nach ein paar Messungen.
-            device->setBaseControl((int16_t)speed, (int16_t)ratio);
     }
-    if(device) device->setBaseControl(0, 0); // STOP
+    if(device) device->setMove(0, 0); // STOP
 }
 

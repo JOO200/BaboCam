@@ -531,7 +531,7 @@ namespace kobuki {
         //diff_drive.setVelocityCommands(linear_velocity, angular_velocity);
     }
 
-    void Kobuki::sendBaseControlCommand() {
+    void Kobuki::sendBaseControlCommand() {/*
         std::vector<double> velocity_commands_received;
         // TODO: Anfahrtsrampen optimieren.
         if(linear_velocity != curr_linear_velocity) {
@@ -548,8 +548,8 @@ namespace kobuki {
             velocity_commands_received.push_back(linear_velocity);
             velocity_commands_received.push_back(angular_velocity);
         }
-
-        sendCommand(Command(kobuki::Command::CommandTypes::VELOCITY_CONTROL, velocity_commands_received[0], velocity_commands_received[1]));
+*/
+        sendCommand(Command(kobuki::Command::CommandTypes::VELOCITY_CONTROL, linear_velocity, angular_velocity));
 #if 0
         if (acceleration_limiter.isEnabled()) {
             velocity_commands_received = acceleration_limiter.limit(diff_drive.pointVelocity());

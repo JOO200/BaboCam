@@ -25,9 +25,11 @@ public:
     };
 
     Context() {
-        m.unlock();   // Wir locken am Anfang den Mutex, damit keiner ohne Daten arbeitet.
+        m.unlock();   // Wir unlocken am Anfang den Mutex, damit keiner ohne Daten arbeitet.
+        data_mutex.unlock();
         sharp_dx = NAN;
         sharp_max_dist = NAN;
+        curr_state = FOLLOW;
     }
 
     std::condition_variable &getCond() {
@@ -35,6 +37,8 @@ public:
     }
 
     std::mutex &getM() { return m; }
+
+    std::mutex &getDataMutex() { return data_mutex; };
 
     ball_pos & getBall() { return curr_ball; }
     void setBall(const ball_pos pos) { curr_ball = pos; }
@@ -48,11 +52,16 @@ public:
     State & getState() { return curr_state; }
     void setState(State state) { curr_state = state; }
 
+    void stop() { m_stop.notify_all(); }
+    std::condition_variable & getStop() { return m_stop; }
+
 private:
     State curr_state;
     ball_pos curr_ball;
     std::condition_variable wait;
+    std::condition_variable m_stop;
     std::mutex m;
+    std::mutex data_mutex;
     double sharp_dx; // 0 = mittig, NaN = nicht da. Distanz zur Mitte in mm nach rechts und links
     double sharp_max_dist;  // maximaler Abstand des Balles in mm
 };
