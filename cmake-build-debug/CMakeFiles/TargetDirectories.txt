@@ -1,3 +1,0 @@
-/home/johannes/dev/BaboCam/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/johannes/dev/BaboCam/cmake-build-debug/CMakeFiles/BaboCam.dir
-/home/johannes/dev/BaboCam/cmake-build-debug/CMakeFiles/edit_cache.dir
