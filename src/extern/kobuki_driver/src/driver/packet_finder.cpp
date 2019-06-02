@@ -83,15 +83,10 @@ namespace kobuki {
         // clearBuffer = 0, waitingForStx, waitingForPayloadSize, waitingForPayloadToEtx, waitingForEtx,
         // std::cout << "update [" << numberOfIncoming << "][" << state << "]" << std::endl;
 
-        syslog(LOG_INFO, "Wait for stx start.");
         WaitForStx(dataStream);
-        syslog(LOG_INFO, "Wait for stx end.");
         waitForPayloadSize(dataStream);
-        syslog(LOG_INFO, "Payload Size %d.", size_payload);
         buffer.clear();
-        syslog(LOG_INFO, "Read Buffer");
         dataStream.Read(buffer, size_payload, 0);
-        syslog(LOG_INFO, "Read Checksum");
         unsigned char check_sum;
         dataStream.ReadByte(check_sum, 0);
 

@@ -72,7 +72,6 @@ void CameraProcessing::run() {
     depth_intrinsics = pipe.get_active_profile().get_stream(RS2_STREAM_DEPTH).as<rs2::video_stream_profile>().get_intrinsics();
     color_intrinsics = pipe.get_active_profile().get_stream(RS2_STREAM_COLOR).as<rs2::video_stream_profile>().get_intrinsics();
 
-    cv::namedWindow("Test", cv::WINDOW_AUTOSIZE);
     while(!m_stop) {
         rs2::frameset data = pipe.wait_for_frames();
         rs2::depth_frame depth = data.get_depth_frame();

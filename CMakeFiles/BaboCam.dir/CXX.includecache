@@ -272,22 +272,16 @@ stdint.h
 macros.hpp
 /home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/macros.hpp
 
-/home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/packet_finder.cpp
-sstream
--
-iostream
--
-syslog.h
--
-libserial/SerialPort.h
--
-../../include/kobuki_driver/packet_handler/packet_finder.hpp
-/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/packet_handler/packet_finder.hpp
-
 /home/johannes/dev/BaboCam/src/extern/standard_exception.hpp
 string
 -
 cstring
+-
+
+/home/johannes/dev/BaboCam/src/interfaces/IRunnable.hpp
+atomic
+-
+thread
 -
 
 /home/johannes/dev/BaboCam/src/interfaces/MovableDevice.hpp
@@ -298,6 +292,36 @@ stdint.h
 
 /home/johannes/dev/BaboCam/src/math/Navigator2D.hpp
 
+/home/johannes/dev/BaboCam/src/math/own_math.hpp
+
+/home/johannes/dev/BaboCam/src/pathfinding/PathFinder.cpp
+syslog.h
+-
+math.h
+-
+PathFinder.hpp
+/home/johannes/dev/BaboCam/src/pathfinding/PathFinder.hpp
+../math/own_math.hpp
+/home/johannes/dev/BaboCam/src/math/own_math.hpp
+StopNowException.hpp
+/home/johannes/dev/BaboCam/src/pathfinding/StopNowException.hpp
+
+/home/johannes/dev/BaboCam/src/pathfinding/PathFinder.hpp
+mutex
+-
+condition_variable
+-
+../struct/Context.hpp
+/home/johannes/dev/BaboCam/src/struct/Context.hpp
+../interfaces/IRunnable.hpp
+/home/johannes/dev/BaboCam/src/interfaces/IRunnable.hpp
+../extern/kobuki_driver/include/kobuki_driver/kobuki.hpp
+/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/kobuki.hpp
+../strategy/DriveToBall.hpp
+/home/johannes/dev/BaboCam/src/strategy/DriveToBall.hpp
+../strategy/KickBall.hpp
+/home/johannes/dev/BaboCam/src/strategy/KickBall.hpp
+
 /home/johannes/dev/BaboCam/src/pathfinding/StopNowException.hpp
 
 /home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.hpp
@@ -306,11 +330,11 @@ stdint.h
 ../interfaces/MovableDevice.hpp
 /home/johannes/dev/BaboCam/src/interfaces/MovableDevice.hpp
 
-/home/johannes/dev/BaboCam/src/strategy/KickBall.cpp
-KickBall.hpp
-/home/johannes/dev/BaboCam/src/strategy/KickBall.hpp
-../pathfinding/StopNowException.hpp
-/home/johannes/dev/BaboCam/src/pathfinding/StopNowException.hpp
+/home/johannes/dev/BaboCam/src/strategy/DriveToBall.hpp
+AbstractStrategy.hpp
+/home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.hpp
+../extern/kobuki_driver/include/kobuki_driver/kobuki.hpp
+/home/johannes/dev/BaboCam/src/extern/kobuki_driver/include/kobuki_driver/kobuki.hpp
 
 /home/johannes/dev/BaboCam/src/strategy/KickBall.hpp
 AbstractStrategy.hpp

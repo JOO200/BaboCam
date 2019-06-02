@@ -96,22 +96,9 @@ CMakeFiles/BaboCam.dir/src/color/CameraProcessing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BaboCam.dir/src/color/CameraProcessing.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/johannes/dev/BaboCam/src/color/CameraProcessing.cpp -o CMakeFiles/BaboCam.dir/src/color/CameraProcessing.cpp.s
 
-CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.o: CMakeFiles/BaboCam.dir/flags.make
-CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.o: src/color/ColorStreamThread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.o -c /home/johannes/dev/BaboCam/src/color/ColorStreamThread.cpp
-
-CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/johannes/dev/BaboCam/src/color/ColorStreamThread.cpp > CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.i
-
-CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/johannes/dev/BaboCam/src/color/ColorStreamThread.cpp -o CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.s
-
 CMakeFiles/BaboCam.dir/src/extern/Signal.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/extern/Signal.cpp.o: src/extern/Signal.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/Signal.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/Signal.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/extern/Signal.cpp.o -c /home/johannes/dev/BaboCam/src/extern/Signal.cpp
 
 CMakeFiles/BaboCam.dir/src/extern/Signal.cpp.i: cmake_force
@@ -124,7 +111,7 @@ CMakeFiles/BaboCam.dir/src/extern/Signal.cpp.s: cmake_force
 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/battery.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/battery.cpp.o: src/extern/kobuki_driver/src/driver/battery.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/battery.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/battery.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/battery.cpp.o -c /home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/battery.cpp
 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/battery.cpp.i: cmake_force
@@ -137,7 +124,7 @@ CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/battery.cpp.s: cmake_
 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/command.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/command.cpp.o: src/extern/kobuki_driver/src/driver/command.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/command.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/command.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/command.cpp.o -c /home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/command.cpp
 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/command.cpp.i: cmake_force
@@ -150,7 +137,7 @@ CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/command.cpp.s: cmake_
 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/core_sensors.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/core_sensors.cpp.o: src/extern/kobuki_driver/src/driver/core_sensors.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/core_sensors.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/core_sensors.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/core_sensors.cpp.o -c /home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/core_sensors.cpp
 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/core_sensors.cpp.i: cmake_force
@@ -163,7 +150,7 @@ CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/core_sensors.cpp.s: c
 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/diff_drive.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/diff_drive.cpp.o: src/extern/kobuki_driver/src/driver/diff_drive.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/diff_drive.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/diff_drive.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/diff_drive.cpp.o -c /home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/diff_drive.cpp
 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/diff_drive.cpp.i: cmake_force
@@ -176,7 +163,7 @@ CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/diff_drive.cpp.s: cma
 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/event_manager.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/event_manager.cpp.o: src/extern/kobuki_driver/src/driver/event_manager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/event_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/event_manager.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/event_manager.cpp.o -c /home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/event_manager.cpp
 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/event_manager.cpp.i: cmake_force
@@ -189,7 +176,7 @@ CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/event_manager.cpp.s: 
 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/kobuki.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/kobuki.cpp.o: src/extern/kobuki_driver/src/driver/kobuki.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/kobuki.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/kobuki.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/kobuki.cpp.o -c /home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/kobuki.cpp
 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/kobuki.cpp.i: cmake_force
@@ -202,7 +189,7 @@ CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/kobuki.cpp.s: cmake_f
 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o: src/extern/kobuki_driver/src/driver/packet_finder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o -c /home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/packet_finder.cpp
 
 CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.i: cmake_force
@@ -215,7 +202,7 @@ CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.s: 
 
 CMakeFiles/BaboCam.dir/src/math/Vector2D.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/math/Vector2D.cpp.o: src/math/Vector2D.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/BaboCam.dir/src/math/Vector2D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/BaboCam.dir/src/math/Vector2D.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/math/Vector2D.cpp.o -c /home/johannes/dev/BaboCam/src/math/Vector2D.cpp
 
 CMakeFiles/BaboCam.dir/src/math/Vector2D.cpp.i: cmake_force
@@ -228,7 +215,7 @@ CMakeFiles/BaboCam.dir/src/math/Vector2D.cpp.s: cmake_force
 
 CMakeFiles/BaboCam.dir/src/pathfinding/PathFinder.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/pathfinding/PathFinder.cpp.o: src/pathfinding/PathFinder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/BaboCam.dir/src/pathfinding/PathFinder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/BaboCam.dir/src/pathfinding/PathFinder.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/pathfinding/PathFinder.cpp.o -c /home/johannes/dev/BaboCam/src/pathfinding/PathFinder.cpp
 
 CMakeFiles/BaboCam.dir/src/pathfinding/PathFinder.cpp.i: cmake_force
@@ -241,7 +228,7 @@ CMakeFiles/BaboCam.dir/src/pathfinding/PathFinder.cpp.s: cmake_force
 
 CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.o: src/sharp/SharpSocket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.o -c /home/johannes/dev/BaboCam/src/sharp/SharpSocket.cpp
 
 CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.i: cmake_force
@@ -254,7 +241,7 @@ CMakeFiles/BaboCam.dir/src/sharp/SharpSocket.cpp.s: cmake_force
 
 CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.o: src/socket/ControlSocket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.o -c /home/johannes/dev/BaboCam/src/socket/ControlSocket.cpp
 
 CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.i: cmake_force
@@ -267,7 +254,7 @@ CMakeFiles/BaboCam.dir/src/socket/ControlSocket.cpp.s: cmake_force
 
 CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.o: src/strategy/AbstractStrategy.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.o -c /home/johannes/dev/BaboCam/src/strategy/AbstractStrategy.cpp
 
 CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.i: cmake_force
@@ -280,7 +267,7 @@ CMakeFiles/BaboCam.dir/src/strategy/AbstractStrategy.cpp.s: cmake_force
 
 CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o: src/strategy/DriveToBall.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.o -c /home/johannes/dev/BaboCam/src/strategy/DriveToBall.cpp
 
 CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.i: cmake_force
@@ -293,7 +280,7 @@ CMakeFiles/BaboCam.dir/src/strategy/DriveToBall.cpp.s: cmake_force
 
 CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o: CMakeFiles/BaboCam.dir/flags.make
 CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o: src/strategy/KickBall.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.o -c /home/johannes/dev/BaboCam/src/strategy/KickBall.cpp
 
 CMakeFiles/BaboCam.dir/src/strategy/KickBall.cpp.i: cmake_force
@@ -309,7 +296,6 @@ BaboCam_OBJECTS = \
 "CMakeFiles/BaboCam.dir/src/BaboCam.cpp.o" \
 "CMakeFiles/BaboCam.dir/src/color/BallFinder.cpp.o" \
 "CMakeFiles/BaboCam.dir/src/color/CameraProcessing.cpp.o" \
-"CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.o" \
 "CMakeFiles/BaboCam.dir/src/extern/Signal.cpp.o" \
 "CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/battery.cpp.o" \
 "CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/command.cpp.o" \
@@ -332,7 +318,6 @@ BaboCam_EXTERNAL_OBJECTS =
 BaboCam: CMakeFiles/BaboCam.dir/src/BaboCam.cpp.o
 BaboCam: CMakeFiles/BaboCam.dir/src/color/BallFinder.cpp.o
 BaboCam: CMakeFiles/BaboCam.dir/src/color/CameraProcessing.cpp.o
-BaboCam: CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.o
 BaboCam: CMakeFiles/BaboCam.dir/src/extern/Signal.cpp.o
 BaboCam: CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/battery.cpp.o
 BaboCam: CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/command.cpp.o
@@ -365,7 +350,7 @@ BaboCam: /usr/local/lib/libopencv_imgcodecs.so.4.0.1
 BaboCam: /usr/local/lib/libopencv_imgproc.so.4.0.1
 BaboCam: /usr/local/lib/libopencv_core.so.4.0.1
 BaboCam: CMakeFiles/BaboCam.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable BaboCam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/johannes/dev/BaboCam/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable BaboCam"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BaboCam.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -11,13 +11,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7df572b4-941b-42a2-924b-9d79d684bbbe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/interfaces/MovableDevice.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pathfinding/StopNowException.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategy/DriveToBall.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategy/DriveToBall.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategy/KickBall.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategy/KickBall.hpp" afterDir="false" />
+    <list default="true" id="7df572b4-941b-42a2-924b-9d79d684bbbe" name="Default Changelist" comment="Finale Abgabeversion">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BaboCam.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/BaboCam.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/CXX.includecache" afterDir="false" />
@@ -28,20 +23,17 @@
       <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/color/CameraProcessing.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/color/CameraProcessing.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/packet_finder.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BaboCam.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaboCam.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/color/BallFinder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/color/BallFinder.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/kobuki.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/kobuki.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color/CameraProcessing.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/color/CameraProcessing.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color/ColorStreamThread.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/color/ColorStreamThread.hpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/packet_finder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/packet_finder.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pathfinding/PathFinder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/pathfinding/PathFinder.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pathfinding/PathFinder.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/pathfinding/PathFinder.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sharp/SharpSocket.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/sharp/SharpSocket.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strategy/AbstractStrategy.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategy/AbstractStrategy.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/struct/Context.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/struct/Context.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strategy/KickBall.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategy/KickBall.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -60,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pathfinding/PathFinder.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="496">
+              <caret line="50" column="71" selection-start-line="50" selection-start-column="71" selection-end-line="50" selection-end-column="71" />
               <folding>
                 <element signature="e#85#104#0" expanded="true" />
               </folding>
@@ -69,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/c++/7/thread">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="372" selection-start-line="372" selection-end-line="372" />
+            <state relative-caret-position="75">
+              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -81,11 +73,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BaboCam.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+            <state relative-caret-position="256">
+              <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
                 <element signature="e#1542#1594#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/strategy/KickBall.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+              <folding>
+                <element signature="e#41#64#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,17 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/packet_finder.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="94" column="32" lean-forward="true" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/include/libserial/SerialPort.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="321" column="13" selection-start-line="321" selection-start-column="13" selection-end-line="321" selection-end-column="13" />
+            <state relative-caret-position="1815">
+              <caret line="121" column="34" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -112,11 +106,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/kobuki.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="600">
+              <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
               <folding>
                 <element signature="e#375#395#0" expanded="true" />
-                <element signature="e#25905#26867#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,35 +118,30 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/color/BallFinder.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="278">
+              <caret line="89" column="45" selection-start-line="89" selection-start-column="45" selection-end-line="89" selection-end-column="45" />
               <folding>
                 <element signature="e#43#70#0" expanded="true" />
+                <element signature="e#3879#5260#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/strategy/DriveToBall.cpp">
+        <entry file="file://$PROJECT_DIR$/src/color/CameraProcessing.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-              <folding>
-                <element signature="e#41#60#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="288">
+              <caret line="73" selection-start-line="73" selection-end-line="73" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/strategy/KickBall.cpp">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-              <folding>
-                <element signature="e#41#64#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -189,6 +177,7 @@
       <find>array</find>
       <find>update</find>
       <find>setBase</find>
+      <find>&quot;Test&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>std::queue</replace>
@@ -199,10 +188,16 @@
       <dir>$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver</dir>
       <dir>$PROJECT_DIR$/src/extern/kobuki_driver</dir>
       <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="528351a6e52ed83a7660982278e01bd9ee766277" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -229,7 +224,6 @@
         <option value="$PROJECT_DIR$/my.json" />
         <option value="$PROJECT_DIR$/src/color/CameraProcessing.hpp" />
         <option value="$PROJECT_DIR$/src/color/BallFinder.hpp" />
-        <option value="$PROJECT_DIR$/src/color/CameraProcessing.cpp" />
         <option value="$PROJECT_DIR$/src/math/Navigator2D.hpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/create_log.sh" />
@@ -239,7 +233,6 @@
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/diff_drive.cpp" />
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp" />
         <option value="$PROJECT_DIR$/src/sharp/SharpSocket.hpp" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/strategy/AbstractStrategy.cpp" />
         <option value="$PROJECT_DIR$/src/pathfinding/StopNowException.hpp" />
         <option value="$PROJECT_DIR$/src/interfaces/EnsureNotNull.hpp" />
@@ -253,20 +246,22 @@
         <option value="$PROJECT_DIR$/src/sharp/SharpSocket.cpp" />
         <option value="$PROJECT_DIR$/src/strategy/DriveToBall.cpp" />
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/kobuki.cpp" />
-        <option value="$PROJECT_DIR$/src/pathfinding/PathFinder.cpp" />
-        <option value="$PROJECT_DIR$/src/color/BallFinder.cpp" />
-        <option value="$PROJECT_DIR$/src/BaboCam.cpp" />
         <option value="$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/packet_finder.cpp" />
+        <option value="$PROJECT_DIR$/src/BaboCam.cpp" />
+        <option value="$PROJECT_DIR$/src/color/CameraProcessing.cpp" />
+        <option value="$PROJECT_DIR$/src/color/BallFinder.cpp" />
         <option value="$PROJECT_DIR$/src/strategy/KickBall.cpp" />
+        <option value="$PROJECT_DIR$/src/pathfinding/PathFinder.cpp" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="27" />
-    <option name="width" value="1381" />
-    <option name="height" value="791" />
+    <option name="x" value="67" />
+    <option name="y" value="25" />
+    <option name="width" value="1853" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -274,6 +269,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -295,7 +291,13 @@
               <item name="BaboCam" type="b2602c69:ProjectViewProjectNode" />
               <item name="BaboCam" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sharp" type="462c0819:PsiDirectoryNode" />
+              <item name="color" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BaboCam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BaboCam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pathfinding" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BaboCam" type="b2602c69:ProjectViewProjectNode" />
@@ -307,7 +309,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -382,6 +383,8 @@
       <workItem from="1556616509119" duration="14557000" />
       <workItem from="1556795427199" duration="7688000" />
       <workItem from="1556806742921" duration="4047000" />
+      <workItem from="1559297631740" duration="3111000" />
+      <workItem from="1559469655178" duration="1089000" />
     </task>
     <task id="LOCAL-00001" summary="Save commit">
       <created>1553708483112</created>
@@ -450,7 +453,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129842000" />
+    <option name="totallyTimeSpent" value="134894000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -465,13 +468,13 @@
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984127" visible="true" weight="0.28555617" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984127" visible="true" weight="0.29551744" />
       <window_info id="Structure" order="1" sideWeight="0.50158733" side_tool="true" weight="0.2801494" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3693599" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893278" weight="0.28185746" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.46652266" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.36933047" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893278" visible="true" weight="0.28941685" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.46652266" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994664" weight="0.32948583" />
@@ -480,7 +483,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32843652" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053364" side_tool="true" weight="0.32843652" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.33585313" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4994664" weight="0.36717063" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4994664" weight="0.36609071" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.2497332" />
@@ -545,13 +548,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="SharpSensores implementiert" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/include/x86_64-linux-gnu/sys/syslog.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="153" column="8" selection-start-line="153" selection-start-column="8" selection-end-line="153" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/create_log.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -643,20 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/color/CameraProcessing.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="83" column="9" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/color/ColorStreamThread.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/json.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -668,13 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="97" column="10" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -808,13 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/include/libserial/SerialPort.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="321" column="13" selection-start-line="321" selection-start-column="13" selection-end-line="321" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/7/thread">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -846,58 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.cproject">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/color/BallFinder.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="e#43#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pathfinding/PathFinder.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#85#104#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BaboCam.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#1542#1594#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/kobuki.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="e#375#395#0" expanded="true" />
-            <element signature="e#25905#26867#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/packet_finder.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="94" column="32" lean-forward="true" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/strategy/DriveToBall.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -908,13 +824,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/include/libserial/SerialPort.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4815">
+          <caret line="321" column="13" selection-start-line="321" selection-start-column="13" selection-end-line="321" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/packet_finder.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1815">
+          <caret line="121" column="34" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extern/kobuki_driver/src/driver/kobuki.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+          <folding>
+            <element signature="e#375#395#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.cproject">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/color/ColorStreamThread.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/color/CameraProcessing.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BaboCam.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+          <folding>
+            <element signature="e#1542#1594#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/strategy/KickBall.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        <state relative-caret-position="360">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
           <folding>
             <element signature="e#41#64#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/color/BallFinder.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="89" column="45" selection-start-line="89" selection-start-column="45" selection-end-line="89" selection-end-column="45" />
+          <folding>
+            <element signature="e#43#70#0" expanded="true" />
+            <element signature="e#3879#5260#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pathfinding/PathFinder.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="50" column="71" selection-start-line="50" selection-start-column="71" selection-end-line="50" selection-end-column="71" />
+          <folding>
+            <element signature="e#85#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
         </state>
       </provider>
     </entry>

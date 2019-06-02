@@ -7,7 +7,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/johannes/dev/BaboCam/src/BaboCam.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/BaboCam.cpp.o"
   "/home/johannes/dev/BaboCam/src/color/BallFinder.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/color/BallFinder.cpp.o"
   "/home/johannes/dev/BaboCam/src/color/CameraProcessing.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/color/CameraProcessing.cpp.o"
-  "/home/johannes/dev/BaboCam/src/color/ColorStreamThread.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.o"
   "/home/johannes/dev/BaboCam/src/extern/Signal.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/extern/Signal.cpp.o"
   "/home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/battery.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/battery.cpp.o"
   "/home/johannes/dev/BaboCam/src/extern/kobuki_driver/src/driver/command.cpp" "/home/johannes/dev/BaboCam/CMakeFiles/BaboCam.dir/src/extern/kobuki_driver/src/driver/command.cpp.o"

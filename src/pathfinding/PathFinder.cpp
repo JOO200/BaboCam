@@ -48,7 +48,7 @@ void PathFinder::run() {
                     break;
                 case Context::State::WAIT:
                     device->setMove(0, 0);
-                    std::this_thread::sleep_for(std::chrono::seconds(30));
+                    std::this_thread::sleep_for(std::chrono::seconds(10));
                     context->setState(Context::State::FOLLOW);
                     break;
                 default:

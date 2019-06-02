@@ -87,12 +87,6 @@
 		<Unit filename="/home/johannes/dev/BaboCam/src/color/CameraProcessing.hpp">
 			<Option target="BaboCam"/>
 		</Unit>
-		<Unit filename="/home/johannes/dev/BaboCam/src/color/ColorStreamThread.cpp">
-			<Option target="BaboCam"/>
-		</Unit>
-		<Unit filename="/home/johannes/dev/BaboCam/src/color/ColorStreamThread.hpp">
-			<Option target="BaboCam"/>
-		</Unit>
 		<Unit filename="/home/johannes/dev/BaboCam/src/extern/SerialDataBuffer.hpp">
 			<Option target="BaboCam"/>
 		</Unit>

@@ -121,7 +121,6 @@ bool BallFinder::checkContour(rs2::depth_frame & depth_frame, rs2::frame & color
     std::cout << "MinX: " << min_x << " MaxX: " << max_x << " MinY: " << min_y << " MaxY: " << max_y << " MinLoc: " << minLoc << std::endl;
 
     circle(color_img, position, 5, Scalar(255,0,0), 2);
-    imshow("Test", shrinked);
 
     if(std::abs(position.x - color_x) > 200 || std::abs(position.y - color_y) > 200) {
         return false;

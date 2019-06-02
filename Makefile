@@ -204,33 +204,6 @@ src/color/CameraProcessing.cpp.s:
 	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/color/CameraProcessing.cpp.s
 .PHONY : src/color/CameraProcessing.cpp.s
 
-src/color/ColorStreamThread.o: src/color/ColorStreamThread.cpp.o
-
-.PHONY : src/color/ColorStreamThread.o
-
-# target to build an object file
-src/color/ColorStreamThread.cpp.o:
-	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.o
-.PHONY : src/color/ColorStreamThread.cpp.o
-
-src/color/ColorStreamThread.i: src/color/ColorStreamThread.cpp.i
-
-.PHONY : src/color/ColorStreamThread.i
-
-# target to preprocess a source file
-src/color/ColorStreamThread.cpp.i:
-	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.i
-.PHONY : src/color/ColorStreamThread.cpp.i
-
-src/color/ColorStreamThread.s: src/color/ColorStreamThread.cpp.s
-
-.PHONY : src/color/ColorStreamThread.s
-
-# target to generate assembly for a file
-src/color/ColorStreamThread.cpp.s:
-	$(MAKE) -f CMakeFiles/BaboCam.dir/build.make CMakeFiles/BaboCam.dir/src/color/ColorStreamThread.cpp.s
-.PHONY : src/color/ColorStreamThread.cpp.s
-
 src/extern/Signal.o: src/extern/Signal.cpp.o
 
 .PHONY : src/extern/Signal.o
@@ -654,9 +627,6 @@ help:
 	@echo "... src/color/CameraProcessing.o"
 	@echo "... src/color/CameraProcessing.i"
 	@echo "... src/color/CameraProcessing.s"
-	@echo "... src/color/ColorStreamThread.o"
-	@echo "... src/color/ColorStreamThread.i"
-	@echo "... src/color/ColorStreamThread.s"
 	@echo "... src/extern/Signal.o"
 	@echo "... src/extern/Signal.i"
 	@echo "... src/extern/Signal.s"

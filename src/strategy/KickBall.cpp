@@ -20,7 +20,9 @@ void KickBall::step(Context *context, MovableDevice *kobuki, std::atomic<bool>& 
         context->getDataMutex().unlock();
         return;
     }
-    kobuki->setMove(300, 0);
+    kobuki->setMove(100, 0);
+    std::this_thread::sleep_for(std::chrono::milliseconds(2500));
+    kobuki->setMove(500, 0);
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
     kobuki->setMove(0, 0);
     context->setState(Context::State::WAIT);
