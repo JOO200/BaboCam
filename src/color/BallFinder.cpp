@@ -27,37 +27,37 @@ void BallFinder::run() {
     using namespace cv;
     using namespace rs2;
     colorizer color_map;
-    namedWindow("test", WINDOW_AUTOSIZE);
+    namedWindow("test", WINDOW_AUTOSIZE);   // Fenster für visuelle Ansicht
     while(!m_stop) {
-        frame color_frame = color_queue.wait_for_frame();
-        depth_frame depth_frame = depth_queue.wait_for_frame().as<rs2::depth_frame>();
+        frame color_frame = color_queue.wait_for_frame();                               // Farbbild
+        depth_frame depth_frame = depth_queue.wait_for_frame().as<rs2::depth_frame>();  // Tiefenbild
 
         const int w = depth_frame.get_width();
         const int h = depth_frame.get_height();
 
-        frame colorized_depth = color_map.process(depth_frame);
-        Mat mat = Mat(Size(w, h), CV_8UC3, (void*)colorized_depth.get_data(), Mat::AUTO_STEP);
+        frame colorized_depth = color_map.process(depth_frame); // Colormap nutzen, um Tiefenbild zu färben.
+        Mat mat = Mat(Size(w, h), CV_8UC3, (void*)colorized_depth.get_data(), Mat::AUTO_STEP);  // Umwandlung zu OpenCV
         Mat depth_mat;
         cvtColor(mat, depth_mat, COLOR_BGR2GRAY);
 
         std::vector<std::vector<Point>> contours;
-        findContours(depth_mat, contours, RETR_LIST, CHAIN_APPROX_NONE);
+        findContours(depth_mat, contours, RETR_LIST, CHAIN_APPROX_NONE);    // Erstellung der Polygon-Liste durch Konturenfindung
         std::vector<Navigator2D> ballPositions;
         for(auto & contour : contours) {
             float angle;
             double distance;
-            if(checkContour(depth_frame, color_frame, contour, angle, distance)) {
+            if(checkContour(depth_frame, color_frame, contour, angle, distance)) {  // Kontrolle, ob Polygon ein Ball ist
                 ballPositions.emplace_back(distance, angle);
             }
         }
-        if(ballPositions.size() == 1) {
+        if(ballPositions.size() == 1) { // Wenn es einen Ball gibt, dann schreibe die Position in den Context
             m_context->getDataMutex().try_lock();
             //m_context->getM().lock();
             m_context->setBall(ballPositions.front());
             m_context->getDataMutex().unlock();
             Context::State curr_state = m_context->getState();
-            if(curr_state == Context::State::FOLLOW) {
-                m_context->getCond().notify_all();
+            if(curr_state == Context::State::FOLLOW) {      // und wenn der aktuelle Status der StateMachine auf FOLLOW steht
+                m_context->getCond().notify_all();          // informiere den warten Thread in PathFinder.cpp
             }
             syslog(LOG_INFO, "Ball found.");
         } else if(ballPositions.size() > 1){

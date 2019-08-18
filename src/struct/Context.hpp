@@ -19,17 +19,17 @@ class Context {
 public:
 
     enum State {
-        WAIT,
-        FOLLOW,
-        KICK
+        WAIT,       // Warte, bis der Zeit liegt
+        FOLLOW,     // Folge dem Ball / Fahre zum Ball
+        KICK        // Kicke den Ball
     };
 
     Context() {
-        m.unlock();   // Wir unlocken am Anfang den Mutex, damit keiner ohne Daten arbeitet.
+        m.unlock();
         data_mutex.unlock();
         sharp_dx = NAN;
         sharp_max_dist = NAN;
-        curr_state = FOLLOW;
+        curr_state = FOLLOW; // Annahme: Wir starten den Roboter und wollen, dass er direkt zum Ball fährt
     }
 
     std::condition_variable &getCond() {

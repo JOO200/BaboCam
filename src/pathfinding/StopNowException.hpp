@@ -6,6 +6,10 @@
 #define BABOCAM_STOPNOWEXCEPTION_HPP
 
 
+/**
+ * Exception, welches während eine Strategie geworfen werden kann. Der Roboter stoppt dann auf der Stelle.
+ * Der Roboter fährt danach auch nicht weiter, sondern bleibt einfach stehen.
+ */
 class StopNowException : public std::exception {
 public:
     StopNowException() = default;

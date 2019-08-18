@@ -17,6 +17,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+/**
+ * Unused: Diese Klasse war ein möglicher Anfang für einen Socketserver auf dem Kontrollrechner.
+ * Mit diesem Socket sollten grundlegende Anweisungen an die Steuerung gegeben werden können.
+ * Da bei allen Tests stets ein Laptop als Kontrollrechner benutzt wurde, war es nicht notwendig, diese Klasse weiter zu entwickeln.
+ * @param port
+ */
 ControlSocket::ControlSocket(uint16_t port) {
 	m_port = port;
 }
@@ -60,7 +66,7 @@ int ControlSocket::start() {
 
 	std::cout << "Success " << std::endl;
 
-
+    // TODO: Hier noch irgendwas sinnvolles einfügen.
 
 	return 0;
 }

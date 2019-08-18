@@ -24,6 +24,7 @@ void CameraProcessing::run() {
     syslog(LOG_INFO, "Device found.");
     selected_device = devices[0];
 
+    // Advanced mode aktivieren
     if (selected_device.is<rs400::advanced_mode>())
     {
         auto advanced_mode_dev = selected_device.as<rs400::advanced_mode>();
@@ -47,6 +48,7 @@ void CameraProcessing::run() {
         return;
     }
 
+    // Filter
     rs2::decimation_filter dec_filter;
     rs2::threshold_filter thr_filter;
     rs2::spatial_filter spat_filter;
@@ -58,7 +60,7 @@ void CameraProcessing::run() {
     filters.push_back(spat_filter);
     filters.push_back(temp_filter);
 
-
+    // Konfiguration der Queues
     rs2::pipeline pipe = rs2::pipeline(ctx);
     rs2::config cfg;
     syslog(LOG_INFO, "Enable config.");
@@ -69,20 +71,21 @@ void CameraProcessing::run() {
     pipe.start(cfg);
     syslog(LOG_INFO, "Pipe started.");
 
+    // Informationen über die Kameras abspeichern
     depth_intrinsics = pipe.get_active_profile().get_stream(RS2_STREAM_DEPTH).as<rs2::video_stream_profile>().get_intrinsics();
     color_intrinsics = pipe.get_active_profile().get_stream(RS2_STREAM_COLOR).as<rs2::video_stream_profile>().get_intrinsics();
 
-    while(!m_stop) {
-        rs2::frameset data = pipe.wait_for_frames();
-        rs2::depth_frame depth = data.get_depth_frame();
-        rs2::frame color = data.get_color_frame();
+    while(!m_stop) { // "Dauerschleife"
+        rs2::frameset data = pipe.wait_for_frames();        // Auf neue Daten warten
+        rs2::depth_frame depth = data.get_depth_frame();    // Tiefenbild erhalten
+        rs2::frame color = data.get_color_frame();          // Farbbild erhalten
 #define USE_FILTERS
 #ifdef USE_FILTERS
-        for(auto & filter : filters) {
+        for(auto & filter : filters) {  // vorher definierte Filter anwenden
             filter.process(depth);
         }
 #endif
-        color_queue.enqueue(color);
+        color_queue.enqueue(color);     // Bilder in die Queues einfügen
         depth_queue.enqueue(depth);
     }
 }
